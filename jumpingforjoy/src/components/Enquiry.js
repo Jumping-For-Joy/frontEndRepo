@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AddCastle =() => {
+const Enquiry =() => {
     return(
         <div>
-
+                
         </div>
     )
 }
 
-export default AddCastle;
+export default Enquiry;
