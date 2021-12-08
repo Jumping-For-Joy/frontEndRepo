@@ -1,5 +1,5 @@
 import React from 'react';
-import JFJlogo from './JFJLogo.jpg'
+import JFJlogo from './JFJLogo.jpg';
 
 const Home =() => {
     return(
