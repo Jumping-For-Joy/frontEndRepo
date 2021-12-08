@@ -15,21 +15,20 @@ import Footer from './Footer';
 function App() {
   return (
     <>
-      
-      <Nav />
-      <Home />
-      <About />
-      <AllCastles />
-      <Castle />
-      <Enquiry />
-      <AllEnquiries />
-      <Enquiryform />
-      <Admindashboard />
-      <AddCastle />
-      <EditCastle />
-      <Footer />
-
-
+      <body>
+          <Nav />
+          <Home />
+          <About />
+          <AllCastles />
+          <Castle />
+          <Enquiry />
+          <AllEnquiries />
+          <Enquiryform />
+          <Admindashboard />
+          <AddCastle />
+          <EditCastle />
+          <Footer />
+      </body>
     </>
   );
 }
