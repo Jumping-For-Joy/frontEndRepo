@@ -14,6 +14,7 @@ const SignIn = () => {
     function formSubmit(event) {
         event.preventDefault()
         // make our call to the database here
+        // we might need to reset userDetails at this point
     }
 
     return(

@@ -4,13 +4,13 @@ import Nav from './Nav';
 import Home from './Home';
 import About from './About';
 import AllCastles from './AllCastles';
-// import Castle from './Castle';
-// import Enquiry from './Enquiry';
-// import AllEnquiries from './AllEnquiries';
-// import Enquiryform from './Enquiryform';
-// import Admindashboard from './AdminDashboard';
-// import AddCastle from './AddCastle';
-// import EditCastle from './EditCastle';
+import Castle from './Castle';
+import Enquiry from './Enquiry';
+import AllEnquiries from './AllEnquiries';
+import Enquiryform from './Enquiryform';
+import AdminDashboard from './AdminDashboard';
+import AddCastle from './AddCastle';
+import EditCastle from './EditCastle';
 import Footer from './Footer';
 import SignUp from './SignUp'
 import SignIn from './SignIn'
@@ -18,14 +18,15 @@ import SignIn from './SignIn'
 function App() {
   return (
     <>
-      {/* <body> */}
+      <body>
 
         <Router>
           <Nav />
 
+          {/* Routes for the entire site: */}
           <Routes>
               <Route path="/about" element={<About />}/>
-              <Route path="/forhire" element={<AllCastles />}/>
+              <Route path="/castles" element={<AllCastles />}/>
               <Route path="/signup" element={<SignUp />}/>
               <Route path="/signin" element={<SignIn />}/>
               <Route path="/" element={<Home />}/>
@@ -34,19 +35,15 @@ function App() {
 
 
 
-          {/* <Nav />
-          <Home />
-          <About />
-          <AllCastles />
           <Castle />
           <Enquiry />
           <AllEnquiries />
           <Enquiryform />
-          <Admindashboard />
+          <AdminDashboard />
           <AddCastle />
-          <EditCastle /> */}
+          <EditCastle />
           <Footer />
-      {/* </body> */}
+      </body>
     </>
   );
 }
