@@ -1,11 +1,15 @@
 import React, {useState} from 'react';
+import {signIn} from '../services/authServices';
+import {useGlobalState} from '../utils/stateContext'
 
 const SignIn = () => {
     const [ userDetails, setUserDetails ] = useState({
         email: "",
         password: ""
     })
+    const {dispatch} = useGlobalState()
 
+    // 
     function formHandler(event) {
         setUserDetails({ ...userDetails, [event.target.name]: event.target.value})
         console.log(userDetails)
@@ -13,8 +17,17 @@ const SignIn = () => {
 
     function formSubmit(event) {
         event.preventDefault()
-        // make our call to the database here
-        // we might need to reset userDetails at this point
+        // this is our call to database
+        signIn(userDetails)
+        .then(({email, jwt}) => {
+            console.log(email, jwt)
+            sessionStorage.setItem("token", jwt)
+            sessionStorage.setItem("user", email)
+            dispatch({type: 'setLoggedInUser', data: email})
+            dispatch({type: 'setToken', data: jwt})
+        })
+        .catch((error) => console.log(error))       
+        // reset userDetails at this point?
     }
 
     return(

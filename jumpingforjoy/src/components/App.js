@@ -22,7 +22,9 @@ import { StateContext } from '../utils/stateContext';
 
 function App() {
   const initialState = {
-    castles: []
+    castles: [],
+    loggedInUser: sessionStorage.getItem("user") || null,
+    auth: {token: sessionStorage.getItem("token") || null}
   }
 
   const [store, dispatch] = useReducer(stateReducer,initialState)
@@ -56,7 +58,6 @@ function App() {
 
 
 
-          <Castle />
           <Enquiry />
           <AllEnquiries />
           <Enquiryform />
