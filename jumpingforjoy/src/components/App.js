@@ -1,9 +1,10 @@
-import './App.css';
+
 import React, { useReducer, useEffect } from 'react'
 import { getCastles } from '../services/castleServices'
 import stateReducer from '../utils/stateReducer'
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Home from './Home';
 import About from './About';
