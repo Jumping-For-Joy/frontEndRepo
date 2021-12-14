@@ -13,6 +13,7 @@ import AllCastles from './AllCastles';
 // import EditCastle from './EditCastle';
 import Footer from './Footer';
 import SignUp from './SignUp'
+import SignIn from './SignIn'
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
               <Route path="/about" element={<About />}/>
               <Route path="/forhire" element={<AllCastles />}/>
               <Route path="/signup" element={<SignUp />}/>
-              {/* <Route path="/signin" component={SignIn}/> */}
+              <Route path="/signin" element={<SignIn />}/>
               <Route path="/" element={<Home />}/>
           </Routes>
         </Router>
