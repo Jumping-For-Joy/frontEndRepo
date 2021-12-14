@@ -1,4 +1,9 @@
-import './App.css';
+
+import React, { useReducer, useEffect } from 'react'
+import { getCastles } from '../services/castleServices'
+import stateReducer from '../utils/stateReducer'
+
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Home from './Home';
@@ -14,11 +19,27 @@ import EditCastle from './EditCastle';
 import Footer from './Footer';
 import SignUp from './SignUp'
 import SignIn from './SignIn'
+import { StateContext } from '../utils/stateContext';
 
 function App() {
+  const initialState = {
+    castles: []
+  }
+
+  const [store, dispatch] = useReducer(stateReducer,initialState)
+  
+  // Load all of our castles from the database
+  useEffect(() => {
+    getCastles()
+    .then((castles) => dispatch({type: 'setCastles', data: castles}))
+    .catch((error) => console.log(error))
+  }, [])
+
+
   return (
-    <>
-      <body>
+    <body>
+      <>
+        <StateContext.Provider value={{store, dispatch}}>
 
         <Router>
           <Nav />
@@ -27,6 +48,7 @@ function App() {
           <Routes>
               <Route path="/about" element={<About />}/>
               <Route path="/castles" element={<AllCastles />}/>
+              <Route path="/castles/:id" element={<Castle />}/>
               <Route path="/signup" element={<SignUp />}/>
               <Route path="/signin" element={<SignIn />}/>
               <Route path="/" element={<Home />}/>
@@ -43,8 +65,9 @@ function App() {
           <AddCastle />
           <EditCastle />
           <Footer />
+          </StateContext.Provider>
+      </>
       </body>
-    </>
   );
 }
 
