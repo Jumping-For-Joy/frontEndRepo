@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Allcastles =() => {
+const AllCastles =() => {
     return(
         <div>
-                
+            <h1>Jumping Castles</h1>
         </div>
     )
 }
 
-export default Allcastles;
+export default AllCastles;
