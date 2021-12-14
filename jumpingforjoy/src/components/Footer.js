@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer =() => {
     return(
-        <div class="footerarea">
-            <footer class="footer">
+        <div className="footerarea">
+            <footer className="footer">
                 <p> ©Jumping for Joy 2021 </p>
             </footer>
         </div>
