@@ -18,7 +18,7 @@ const AllCastles =() => {
                     <div style={{border: 'solid 1px black', height: '200px', width: '200px'}}>Pretend I'm a picture!</div>
                     <Link key={castle.id} to={`/castles/${castle.id}`}>
                         {castle.name}
-                        {/* <Castle index={index} castle={castle} /> */}
+                        <Castle index={index} castle={castle} />
                     </Link>
                     <p>{castle.description}</p>
                     </div>
