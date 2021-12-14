@@ -3,16 +3,20 @@ import {signIn} from '../services/authServices';
 import {useGlobalState} from '../utils/stateContext'
 
 const SignIn = () => {
-    const [ userDetails, setUserDetails ] = useState({
+    const initialState = {
         email: "",
         password: ""
-    })
-    const {dispatch} = useGlobalState()
+    }
 
-    // 
+    const [userDetails, setUserDetails] = useState(initialState)
+    const {store, dispatch} = useGlobalState()
+    const {loggedInUser} = store
+
     function formHandler(event) {
-        setUserDetails({ ...userDetails, [event.target.name]: event.target.value})
-        console.log(userDetails)
+        setUserDetails({
+            ...userDetails, 
+            [event.target.name]: event.target.value
+        })
     }
 
     function formSubmit(event) {
@@ -20,14 +24,13 @@ const SignIn = () => {
         // this is our call to database
         signIn(userDetails)
         .then(({email, jwt}) => {
-            console.log(email, jwt)
             sessionStorage.setItem("token", jwt)
             sessionStorage.setItem("user", email)
             dispatch({type: 'setLoggedInUser', data: email})
             dispatch({type: 'setToken', data: jwt})
         })
         .catch((error) => console.log(error))       
-        // reset userDetails at this point?
+        setUserDetails(initialState)
     }
 
     return(
@@ -49,6 +52,7 @@ const SignIn = () => {
                         onChange={formHandler} />
                 </label>
                 <button type="submit">Sign in</button>
+                {loggedInUser && <p>Success! Welcome {sessionStorage.user}.</p>}
             </form>
         </div>
     )
