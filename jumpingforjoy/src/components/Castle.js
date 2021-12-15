@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import {useParams, Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import {getCastle} from '../services/castleServices'
-// import {useGlobalState} from '../utils/stateContext'
+import {useGlobalState} from '../utils/stateContext'
 
 const Castle = () => {
     // set local state to the right caslte
     const [castle, setCastle] = useState('')
     const {id} = useParams()
-    // this is where we would use global state to set logged in user
-    // const {store, dispatch} = useGlobalState()
-    // const {loggedInUser} = store
+    // this is where we use global state to set logged in user
+    const {store} = useGlobalState()
+    const {loggedInUser} = store
 
     useEffect(() => {
         getCastle(id)
@@ -22,11 +22,11 @@ const Castle = () => {
              <h3>{castle.name}</h3>
              <p>{castle.description}</p>
 
-             {/* Load edit options for admin here:
              {loggedInUser &&
-                <button>Edit</button>
-                <button>Hide</button>} */}
-            {/* <Link to="/enquiry/new">Enquire</Link> */}
+             <panel>
+                 <button>Edit</button>
+                 <button>Hide</button>
+             </panel>}
         </div>
     )
 }

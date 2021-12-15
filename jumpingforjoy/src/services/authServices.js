@@ -1,8 +1,16 @@
 import jumpingForJoyAPI from '../config/api'
 
-export async function signIn() {
-    const response = await jumpingForJoyAPI.get('/api/auth/signin')
-    console.log(response)
-    // .then
-    // .catch
+export async function signIn(data) {
+    const response = await jumpingForJoyAPI.post('/api/auth/sign_in', data)
+    return response.data
+}
+
+export async function signUp(data) {
+    const response = await jumpingForJoyAPI.post('/api/auth/sign_up', data)
+    return response.data
+}
+
+export async function signOut(data) {
+    sessionStorage.clear()
+    return "Logged out"
 }
