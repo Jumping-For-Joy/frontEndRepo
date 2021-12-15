@@ -1,12 +1,15 @@
 import React from 'react';
+import { StyledFooter } from '../styled/footer'
 
 const Footer =() => {
     return(
-        <div className="footer-area">
-            <footer className="footer">
+        
+        <StyledFooter>
+            <footer>
                 <p> ©Jumping for Joy 2021 </p>
             </footer>
-        </div>
+        </StyledFooter>
+    
     )
 }
 
