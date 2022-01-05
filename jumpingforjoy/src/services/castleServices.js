@@ -11,14 +11,17 @@ export async function getCastle(id) {
     return response.data
 }
 
-export async function createCastle(castle) {
-
-}
+// export async function createCastle(castle) {
+//     const response = await jumpingForJoyAPI.post(`/api/castles/${id}`)
+//     return response.data
+// }
 
 export async function updateCastle(castle) {
-
+    // .put(url[, data[, config]])
+    const response = await jumpingForJoyAPI.put(`/api/castles/${castle.id}`, castle)
+    return response.data
 }
 
 export async function deleteCastle(castle) {
- 
-}
+    //  await jumpingForJoyAPI.delete()
+}   
