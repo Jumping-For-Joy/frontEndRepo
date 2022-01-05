@@ -11,16 +11,16 @@ const AllCastles =() => {
     return(
         <div>
             <h1>Jumping Castles</h1>
-            {/* This is where we would map through all castles */}
+            {/* This is where we map through all castles */}
             {castles.map((castle, index) => {
                 return (
                     <div key={castle.id}>
                     <div style={{border: 'solid 1px black', height: '200px', width: '200px'}}>Pretend I'm a picture!</div>
                     <Link key={castle.id} to={`/castles/${castle.id}`}>
                         {castle.name}
-                        <Castle index={index} castle={castle} />
+                        {/* <Castle index={index} castle={castle} /> */}
                     </Link>
-                    <p>{castle.description}</p>
+                    {/* <p>{castle.description}</p> */}
                     </div>
                 )
             })}

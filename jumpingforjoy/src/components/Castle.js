@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import {getCastle} from '../services/castleServices'
 import {useGlobalState} from '../utils/stateContext'
 
@@ -19,14 +19,13 @@ const Castle = () => {
 
     return(
         <div>
-             <h3>{castle.name}</h3>
-             <p>{castle.description}</p>
-
-             {loggedInUser &&
-             <panel>
-                 <button>Edit</button>
-                 <button>Hide</button>
-             </panel>}
+            <h3>{castle.name}</h3>
+            <p>{castle.description}</p>
+            {/* Image goes here */}
+            {loggedInUser &&
+            <panel>
+                <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
+            </panel>}
         </div>
     )
 }
