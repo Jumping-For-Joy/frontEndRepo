@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, UnorderedList } from '../styled/navigation';
-import jfjcastle from './jfjcastle.png';
-import React from 'react';
+// import jfjcastle from './jfjcastle.png';
 import {signOut} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
 
@@ -32,9 +31,13 @@ const Navigation =() => {
                 <li>
                     <Link to="/about" className="active">About</Link>
                 </li>
+                <li>
+                    {loggedInUser && 
+                    <Link to="/" className="active" onClick={handleSignOut}>Sign Out</Link>}
+                </li>
             </UnorderedList>
             <div className="img">
-                    <img src={jfjcastle} alt="jfjcastle" width="45"/>
+                    {/* <img src={jfjcastle} alt="jfjcastle" width="45"/> */}
             </div>
         </Nav>
     );

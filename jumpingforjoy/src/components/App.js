@@ -51,12 +51,14 @@ function App() {
               <Route path="/about" element={<About />}/>
               {/* castle routes */}
               <Route path="/castles" element={<AllCastles />}/>
+              <Route path="castles/new" element={<AddCastle />}/>
               <Route path="/castles/:id" element={<Castle />}/>
               <Route path="/castles/:id/update" element={<EditCastle />}/>
               
               {/* auth routes */}
               <Route path="/signup" element={<SignUp />}/>
               <Route path="/signin" element={<SignIn />}/>
+
               <Route path="/" element={<Home />}/>
           </Routes>
         </Router>
@@ -67,7 +69,6 @@ function App() {
           <AllEnquiries />
           <Enquiryform />
           <AdminDashboard />
-          <AddCastle />
           <Footer />
           </StateContext.Provider>
       </>

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom'
-import {getCastle, updateCastle} from '../services/castleServices'
+import {deleteCastle, getCastle, updateCastle} from '../services/castleServices'
 import {useGlobalState} from '../utils/stateContext'
 
 const EditCastle = () => {
@@ -77,6 +77,15 @@ const EditCastle = () => {
         .catch(error => console.log(error))
     }
 
+    function handleDelete() {
+        const confirmDelete = window.confirm("Are you sure you want to delete this castle? This is a permanent change that cannot be undone.")
+        if (confirmDelete === true) {
+            deleteCastle(id)
+            .then(response => response.data)
+            .catch(error => console.log(error))
+        }
+    }
+
     return(
         <div>
             {loggedInUser && 
@@ -106,6 +115,7 @@ const EditCastle = () => {
                         <button onClick={fileUpload}>Upload images</button>
                         <button type="submit">Save changes</button>
                     </form>
+                    <button onClick={handleDelete}>Delete this castle</button>
                     <div>
                         {formData.imageUrl}
                     </div>

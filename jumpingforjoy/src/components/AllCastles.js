@@ -11,7 +11,8 @@ const AllCastles =() => {
     return(
         <div>
             <h1>Jumping Castles</h1>
-            {/* This is where we map through all castles */}
+            {/* This is where we map through all castles from the database */}
+            <Link to={`/castles/new`}>Add New Castle</Link>
             {castles.map((castle, index) => {
                 return (
                     <div key={castle.id}>

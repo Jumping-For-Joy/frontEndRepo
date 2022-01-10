@@ -11,10 +11,10 @@ export async function getCastle(id) {
     return response.data
 }
 
-// export async function createCastle(castle) {
-//     const response = await jumpingForJoyAPI.post(`/api/castles/${id}`)
-//     return response.data
-// }
+export async function createCastle(castle) {
+    const response = await jumpingForJoyAPI.post(`/api/castles`, castle)
+    return response.data
+}
 
 export async function updateCastle(castle) {
     // .put(url[, data[, config]])
@@ -22,6 +22,8 @@ export async function updateCastle(castle) {
     return response.data
 }
 
-export async function deleteCastle(castle) {
+export async function deleteCastle(id) {
     //  await jumpingForJoyAPI.delete()
+    const response = await jumpingForJoyAPI.delete(`/api/castles/${id}`)
+    return response.data
 }   
