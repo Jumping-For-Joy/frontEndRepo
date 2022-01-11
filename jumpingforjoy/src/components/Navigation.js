@@ -32,8 +32,7 @@ const Navigation =() => {
                     <Link to="/about" className="active">About</Link>
                 </li>
                 <li>
-                    {loggedInUser && 
-                    <Link to="/" className="active" onClick={handleSignOut}>Sign Out</Link>}
+                    { loggedInUser ? <Link to="/" className="active" onClick={handleSignOut}>Sign Out</Link> : <Link to="/signin" className="active">Sign In</Link>}
                 </li>
             </UnorderedList>
             <div className="img">
