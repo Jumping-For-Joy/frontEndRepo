@@ -20,6 +20,7 @@ import Footer from './Footer';
 import SignUp from './SignUp'
 import SignIn from './SignIn'
 import { StateContext } from '../utils/stateContext';
+import { Body } from '../styled/app'
 
 function App() {
   const initialState = {
@@ -39,7 +40,8 @@ function App() {
 
 
   return (
-    <body>
+    
+    <Body>
       <>
         <StateContext.Provider value={{store, dispatch}}>
 
@@ -72,7 +74,7 @@ function App() {
           <Footer />
           </StateContext.Provider>
       </>
-      </body>
+      </Body>
   );
 }
 
