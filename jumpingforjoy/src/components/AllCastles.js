@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalState } from '../utils/stateContext'
-import Castle from './Castle'
 
 const AllCastles =() => {
-    // const [ castles, setCastles ] = useState([])
     const {store} = useGlobalState()
     const {castles} = store
 
@@ -16,12 +14,14 @@ const AllCastles =() => {
             {castles.map((castle, index) => {
                 return (
                     <div key={castle.id}>
-                    <div style={{border: 'solid 1px black', height: '200px', width: '200px'}}>Pretend I'm a picture!</div>
-                    <Link key={castle.id} to={`/castles/${castle.id}`}>
-                        {castle.name}
-                        {/* <Castle index={index} castle={castle} /> */}
-                    </Link>
-                    {/* <p>{castle.description}</p> */}
+                        <Link key={castle.id} to={`/castles/${castle.id}`}>
+                        {castle.img_url && 
+                            <span>
+                                <img src={castle.img_url} style={{width: "400px"}}/>
+                                <h3>{castle.name}</h3>
+                            </span>
+                        }
+                        </Link>
                     </div>
                 )
             })}
