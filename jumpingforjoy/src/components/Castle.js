@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useParams, Link} from 'react-router-dom'
 import {getCastle, deleteCastle} from '../services/castleServices'
 import {useGlobalState} from '../utils/stateContext'
+import { Div } from '../styled/castle'
+
 
 const Castle = () => {
     // set local state to the right castle
@@ -27,23 +29,27 @@ const Castle = () => {
     }
 
     return(
-        <div>
-            <h3>{castle.name}</h3>
-            <p>{castle.description}</p>
-            <p>{castle.price}</p>
+
+        
+        <Div>
             {castle.img_url && 
                 <div>
                     <img src={castle.img_url} style={{width: "400px"}}/>
                 </div>
             }
+            <h3>{castle.name}</h3>
+            <p>{castle.description}</p>
+            <p>{castle.price}</p>
             {castle.available ? <p>Available now</p> : <p>Currently unavailable</p>}
+            <section>
             {loggedInUser &&
             <span>
                 <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
                 <Link to={`/castles/${castle.id}/enquiry`}>Make a Booking Request</Link>
                 <button onClick={handleDelete}>Delete this castle</button>
             </span>}
-        </div>
+            </section>
+        </Div>
     )
 }
 

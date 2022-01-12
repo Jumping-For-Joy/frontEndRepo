@@ -4,6 +4,8 @@ import { Nav, UnorderedList } from '../styled/navigation';
 // import jfjcastle from './jfjcastle.png';
 import {signOut} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
+import jfjcastle from '../images/jfjcastle.png'
+
 
 const Navigation =() => {
     const {store, dispatch} = useGlobalState()
@@ -36,7 +38,7 @@ const Navigation =() => {
                 </li>
             </UnorderedList>
             <div className="img">
-                    {/* <img src={jfjcastle} alt="jfjcastle" width="45"/> */}
+                    <img src={jfjcastle} alt="jfjcastle" width="45"/>
             </div>
         </Nav>
     );

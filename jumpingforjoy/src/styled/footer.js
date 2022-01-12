@@ -12,13 +12,15 @@ export const StyledFooter = styled.div`
     font-family: 'Open Sans', sans-serif;
     color: #707070;
 
+	
+
     p {
         text-align: center;
-        padding: 12px;
+        padding: 15px;
     
     }
 
     footer {
-        margin-bottom: 5px;
+        margin-bottom: 0px;
     }
 `

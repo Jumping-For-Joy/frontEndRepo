@@ -21,6 +21,7 @@ import SignUp from './SignUp'
 import SignIn from './SignIn'
 import BookingRequest from './BookingRequest'
 import { StateContext } from '../utils/stateContext';
+import { Body } from '../styled/app'
 
 function App() {
   const initialState = {
@@ -40,7 +41,8 @@ function App() {
 
 
   return (
-    <body>
+    
+    <Body>
       <>
         <StateContext.Provider value={{store, dispatch}}>
 
@@ -76,7 +78,7 @@ function App() {
           <Footer />
           </StateContext.Provider>
       </>
-      </body>
+      </Body>
   );
 }
 
