@@ -4,6 +4,7 @@ import {getCastle, deleteCastle} from '../services/castleServices'
 import {useGlobalState} from '../utils/stateContext'
 import { Div } from '../styled/castle'
 
+
 const Castle = () => {
     // set local state to the right castle
     const [castle, setCastle] = useState('')
@@ -28,6 +29,7 @@ const Castle = () => {
     }
 
     return(
+
         
         <Div>
             {castle.img_url && 
