@@ -17,7 +17,7 @@ const Castle = () => {
         getCastle(id)
         .then((castle) => setCastle(castle))
         .catch((error) => console.log(error))
-    }, [])
+    }, [id])
 
     function handleDelete() {
         const confirmDelete = window.confirm("Are you sure you want to delete this castle? This is a permanent change that cannot be undone.")

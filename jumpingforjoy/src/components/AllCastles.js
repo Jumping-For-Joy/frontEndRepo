@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useGlobalState } from '../utils/stateContext'
 import {Container, Card, StyledLink, HeaderDiv} from '../styled/allcastles'
 

@@ -24,7 +24,7 @@ const EditCastle = () => {
         .then(castle => setFormData(castle))
         .then(castle => console.log(castle))
         .catch(error => console.error(error))
-    }, [])
+    }, [id])
 
 
     function formSubmit(submittedFormData) {

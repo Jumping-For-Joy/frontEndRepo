@@ -12,7 +12,6 @@ import AllCastles from './AllCastles';
 import Castle from './Castle';
 import Enquiry from './Enquiry';
 import AllEnquiries from './AllEnquiries';
-import EnquiryForm from './CustomerForm';
 import AdminDashboard from './AdminDashboard';
 import AddCastle from './AddCastle';
 import EditCastle from './EditCastle';
