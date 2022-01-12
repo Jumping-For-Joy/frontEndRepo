@@ -54,8 +54,10 @@ const SignIn = () => {
                             onChange={formHandler} />
                     </label>
                     <section>
-                    <button type="submit">Sign in</button>
-                    {loggedInUser && <p>Success! Welcome {sessionStorage.user}.</p>}
+                        <button type="submit">Sign in</button>
+                    </section>
+                    <section>
+                        {loggedInUser && <p>Success! Welcome {sessionStorage.user}.</p>}
                     </section>
                 </form>
             </div>

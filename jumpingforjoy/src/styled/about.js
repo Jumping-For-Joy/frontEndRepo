@@ -31,6 +31,6 @@ export const Div = styled.div`
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        width: 90%;
     }
 `

@@ -11,16 +11,14 @@ export const StyledFooter = styled.div`
     border-radius: 20px;
     font-family: 'Open Sans', sans-serif;
     color: #707070;
-
-	
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 
     p {
         text-align: center;
-        padding: 15px;
-    
+        padding-bottom: 15px;
+        
     }
 
-    footer {
-        margin-bottom: 0px;
-    }
 `

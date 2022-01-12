@@ -3,9 +3,11 @@ import styled from 'styled-components'
 export const Body = styled.div`
     
     background-color: #D9F7FD;
-    margin: auto;
-    width: 100%;
-    height: 100%; 
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     
     
     img {
