@@ -102,7 +102,7 @@ const CastleForm = ({castle, formSubmit}) => {
                     id="available"
                     type="checkbox"
                     name="available"
-                    checked={formData.available} // Nullish coalescing operator - if the first value is null or undefined it will return the second value
+                    checked={formData.available} 
                     onChange={checkboxHandler}
                 />
 

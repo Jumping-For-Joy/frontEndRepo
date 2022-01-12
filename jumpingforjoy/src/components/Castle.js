@@ -40,6 +40,7 @@ const Castle = () => {
             {loggedInUser &&
             <span>
                 <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
+                <Link to={`/castles/${castle.id}/enquiry`}>Make a Booking Request</Link>
                 <button onClick={handleDelete}>Delete this castle</button>
             </span>}
         </div>

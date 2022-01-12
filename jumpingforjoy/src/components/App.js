@@ -12,13 +12,14 @@ import AllCastles from './AllCastles';
 import Castle from './Castle';
 import Enquiry from './Enquiry';
 import AllEnquiries from './AllEnquiries';
-import Enquiryform from './Enquiryform';
+import EnquiryForm from './CustomerForm';
 import AdminDashboard from './AdminDashboard';
 import AddCastle from './AddCastle';
 import EditCastle from './EditCastle';
 import Footer from './Footer';
 import SignUp from './SignUp'
 import SignIn from './SignIn'
+import BookingRequest from './BookingRequest'
 import { StateContext } from '../utils/stateContext';
 
 function App() {
@@ -49,11 +50,15 @@ function App() {
           {/* Routes for the entire site: */}
           <Routes>
               <Route path="/about" element={<About />}/>
+
               {/* castle routes */}
               <Route path="/castles" element={<AllCastles />}/>
               <Route path="castles/new" element={<AddCastle />}/>
               <Route path="/castles/:id" element={<Castle />}/>
               <Route path="/castles/:id/update" element={<EditCastle />}/>
+
+              {/* enquiry routes */}
+              <Route path="/castles/:id/enquiry" element={<BookingRequest />}/>
               
               {/* auth routes */}
               <Route path="/signup" element={<SignUp />}/>
@@ -67,7 +72,6 @@ function App() {
 
           <Enquiry />
           <AllEnquiries />
-          <Enquiryform />
           <AdminDashboard />
           <Footer />
           </StateContext.Provider>
