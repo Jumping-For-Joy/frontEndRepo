@@ -4,6 +4,7 @@ import {getCastle, deleteCastle} from '../services/castleServices'
 import {useGlobalState} from '../utils/stateContext'
 import { Div } from '../styled/castle'
 
+
 const Castle = () => {
     // set local state to the right castle
     const [castle, setCastle] = useState('')
@@ -28,27 +29,25 @@ const Castle = () => {
     }
 
     return(
-        <Div> 
-            <div>
-                {castle.img_url && 
-                    <div>
-                        <img src={castle.img_url} style={{width: "400px"}}/>
-                    </div>
-                }
-                <h3>{castle.name}</h3>
-                <p>{castle.description}</p>
-                <p>{castle.price}</p>
-                    {castle.available ? <p>Available now</p> : <p>Currently unavailable</p>
-                    }
-                    {loggedInUser &&
-                    <span>
-                        <section>
-                        <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
-                        <button onClick={handleDelete}>Delete this castle</button>
-                        </section>
-                    </span>}
-                
-            </div>
+
+        
+        <Div>
+            {castle.img_url && 
+                <div>
+                    <img src={castle.img_url} style={{width: "400px"}}/>
+                </div>
+            }
+            <h3>{castle.name}</h3>
+            <p>{castle.description}</p>
+            <p>{castle.price}</p>
+            {castle.available ? <p>Available now</p> : <p>Currently unavailable</p>}
+            <section>
+            {loggedInUser &&
+            <span>
+                <button><Link to={`/castles/${castle.id}/update`}>Edit castle</Link></button>
+                <button onClick={handleDelete}>Delete this castle</button>
+            </span>}
+            </section>
         </Div>
     )
 }

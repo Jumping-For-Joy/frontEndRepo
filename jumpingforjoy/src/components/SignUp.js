@@ -37,43 +37,48 @@ const SignUp = () => {
 
     return(
         <Form>
-        <div>
-            <h3>Create new account</h3>
-            <form onSubmit={formSubmit}>
-                <label>Name:
-                    <input 
-                        type="text" 
-                        name="name"
-                        value={userDetails.name}
-                        onChange={formHandler} />
-                </label>
-                <label>Email:
-                    <input 
-                        type="email" 
-                        name="email"
-                        value={userDetails.email}
-                        onChange={formHandler} />
-                </label>
-                <label>Password:
-                    <input 
-                        type="password" 
-                        name="password"
-                        value={userDetails.password}
-                        onChange={formHandler} />
-                </label>
-                <label>Password confirmation:
-                    <input 
-                        type="password" 
-                        name="password_confirmation"
-                        value={userDetails.password_confirmation}
-                        onChange={formHandler} />
-                </label>
-                <section>
+            <div>
+                <h3>Create new account</h3>
+                <form onSubmit={formSubmit}>
+                    <label>Name:
+                        <input 
+                            type="text" 
+                            name="name"
+                            value={userDetails.name}
+                            onChange={formHandler} />
+                    </label>
+                    <br></br>
+                    <label>Email:
+                        <input 
+                            type="email" 
+                            name="email"
+                            value={userDetails.email}
+                            onChange={formHandler} />
+                    </label>
+                    <br></br>
+                    <label>Password:
+                        <input 
+                            type="password" 
+                            name="password"
+                            value={userDetails.password}
+                            onChange={formHandler} />
+                    </label>
+                    <br></br>
+                    <label>Password confirmation:
+                    <br></br>
+                        <input 
+                            type="password" 
+                            name="password_confirmation"
+                            value={userDetails.password_confirmation}
+                            onChange={formHandler} />
+                    </label>
+                    <br></br>
+                    <section>
                     <button type="submit">Create account</button>
                     {loggedInUser && <p>Success!</p>}
-                </section>
-            </form>
-        </div>
+                    </section>
+                </form>
+            </div>
         </Form>
     )
 }
