@@ -12,7 +12,6 @@ export const Div = styled.div`
         width: 500px;
         align-items: center;
         background: #F8FEFE;
-        border: solid 2px #707070;
     }
 
     h1 {
@@ -25,6 +24,7 @@ export const Div = styled.div`
         font-family: 'Open Sans', sans-serif;
         color: #707070;
         text-align: center;
+        padding-bottom: 20px;
     }
 
     img {
@@ -32,6 +32,5 @@ export const Div = styled.div`
         margin-left: auto;
         margin-right: auto;
         width: 80%;
-        border: solid 2px #707070;
     }
 `
