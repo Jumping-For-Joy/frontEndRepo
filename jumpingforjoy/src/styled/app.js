@@ -2,9 +2,13 @@ import styled from 'styled-components'
 
 export const Body = styled.div`
     
-    background: #D9F7FD;
-    margin: auto;
-   
+    background-color: #D9F7FD;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
     
     
     img {
