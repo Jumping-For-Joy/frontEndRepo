@@ -5,9 +5,9 @@ import { Section } from '../styled/home'
 const Home =() => {
     return(
         <Section>
-        <div class="landing-image">
-            <img src={JFJlogo} alt="JFJlogo" width="500"/>
-        </div>
+            <div class="landing-image">
+                <img src={JFJlogo} alt="JFJlogo" width="500"/>
+            </div>
         </Section>
     )
 }
