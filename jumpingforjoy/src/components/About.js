@@ -1,6 +1,6 @@
 import React from 'react';
 import { Div } from '../styled/about'
-import JFJlogo from './JFJLogo.jpg';
+import JFJlogo from '../images/JFJLogo.jpg';
 
 const About =() => {
     return(
