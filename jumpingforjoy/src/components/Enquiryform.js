@@ -39,7 +39,6 @@ const EnquiryForm = ({customerId, castleId}) => {
             ...formData,
             [event.target.name]: event.target.checked
         })
-        console.log(castleId)
     }
 
     function handleSubmit(event) {
@@ -48,7 +47,7 @@ const EnquiryForm = ({customerId, castleId}) => {
             ...formData,
             customer_id: customerId,
             end_time: getEndTime(formData.start_time, formData.duration), 
-            castle_id: 9,
+            castle_id: castleId,
             paid: false
         })
         .then((response) => console.log(response))
