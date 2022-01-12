@@ -13,7 +13,7 @@ export const Div = styled.div`
         width: 500px;
         align-items: center;
         background: #F8FEFE;
-        border: solid 2px black;
+        
 
         h3 {
             margin-top; 20px;
@@ -35,7 +35,7 @@ export const Div = styled.div`
          }
 
          img {
-            border: solid 2px black;
+            
             display: block;
             margin-top: 5px;
             margin-left: auto;

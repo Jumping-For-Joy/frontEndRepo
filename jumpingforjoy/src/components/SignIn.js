@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {signIn} from '../services/authServices';
 import {useGlobalState} from '../utils/stateContext'
+import { Form } from '../styled/signup'
 
 const SignIn = () => {
     const initialState = {
@@ -34,27 +35,31 @@ const SignIn = () => {
     }
 
     return(
-        <div>
-            <h1>Sign in</h1>
-            <form onSubmit={formSubmit}>
-                <label>Email:
-                    <input 
-                        type="email" 
-                        name="email"
-                        value={userDetails.email}
-                        onChange={formHandler} />
-                </label>
-                <label>Password:
-                    <input 
-                        type="password" 
-                        name="password"
-                        value={userDetails.password}
-                        onChange={formHandler} />
-                </label>
-                <button type="submit">Sign in</button>
-                {loggedInUser && <p>Success! Welcome {sessionStorage.user}.</p>}
-            </form>
-        </div>
+        <Form>
+            <div>
+                <h3>Sign in</h3>
+                <form onSubmit={formSubmit}>
+                    <label>Email:
+                        <input 
+                            type="email" 
+                            name="email"
+                            value={userDetails.email}
+                            onChange={formHandler} />
+                    </label>
+                    <label>Password:
+                        <input 
+                            type="password" 
+                            name="password"
+                            value={userDetails.password}
+                            onChange={formHandler} />
+                    </label>
+                    <section>
+                    <button type="submit">Sign in</button>
+                    {loggedInUser && <p>Success! Welcome {sessionStorage.user}.</p>}
+                    </section>
+                </form>
+            </div>
+        </Form>
     )
 }
 
