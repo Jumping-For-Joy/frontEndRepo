@@ -39,6 +39,18 @@ export const HeaderDiv = styled.div`
         padding: 15px;
         box-shadow: 3px 3px;
     }
+
+    h3 {
+        margin-top; 20px;
+        padding-top: 20px;
+        font-size: 20px;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        text-decoration: none; 
+        color: #707070;
+     }
+
+    
 `
 
 export const Card = styled.div`
@@ -68,4 +80,8 @@ export const Card = styled.div`
 export const StyledLink = styled(Link)`
     text-align: center;
     text-decoration: none;
+
+    justify-content: center;
+    display: flex;
+    
 `

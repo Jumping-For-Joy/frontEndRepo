@@ -20,7 +20,7 @@ import SignUp from './SignUp'
 import SignIn from './SignIn'
 import BookingRequest from './BookingRequest'
 import { StateContext } from '../utils/stateContext';
-import { Body } from '../styled/app'
+
 
 function App() {
   const initialState = {
@@ -41,43 +41,43 @@ function App() {
 
   return (
     
-    <Body>
+    
       <>
-        <StateContext.Provider value={{store, dispatch}}>
+          <StateContext.Provider value={{store, dispatch}}>
 
-        <Router>
-          <Nav />
+          <Router>
+            <Nav />
 
-          {/* Routes for the entire site: */}
-          <Routes>
-              <Route path="/about" element={<About />}/>
+            {/* Routes for the entire site: */}
+            <Routes>
+                <Route path="/about" element={<About />}/>
 
-              {/* castle routes */}
-              <Route path="/castles" element={<AllCastles />}/>
-              <Route path="castles/new" element={<AddCastle />}/>
-              <Route path="/castles/:id" element={<Castle />}/>
-              <Route path="/castles/:id/update" element={<EditCastle />}/>
+                {/* castle routes */}
+                <Route path="/castles" element={<AllCastles />}/>
+                <Route path="castles/new" element={<AddCastle />}/>
+                <Route path="/castles/:id" element={<Castle />}/>
+                <Route path="/castles/:id/update" element={<EditCastle />}/>
 
-              {/* enquiry routes */}
-              <Route path="/castles/:id/enquiry" element={<BookingRequest />}/>
-              
-              {/* auth routes */}
-              <Route path="/signup" element={<SignUp />}/>
-              <Route path="/signin" element={<SignIn />}/>
+                {/* enquiry routes */}
+                <Route path="/castles/:id/enquiry" element={<BookingRequest />}/>
+                
+                {/* auth routes */}
+                <Route path="/signup" element={<SignUp />}/>
+                <Route path="/signin" element={<SignIn />}/>
 
-              <Route path="/" element={<Home />}/>
-          </Routes>
-        </Router>
+                <Route path="/" element={<Home />}/>
+            </Routes>
+          </Router>
 
 
 
-          <Enquiry />
-          <AllEnquiries />
-          <AdminDashboard />
-          <Footer />
-          </StateContext.Provider>
+            <Enquiry />
+            <AllEnquiries />
+            <AdminDashboard />
+            <Footer />
+            </StateContext.Provider>
       </>
-      </Body>
+      
   );
 }
 
