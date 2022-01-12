@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Allenquiries =() => {
-    return(
+const AllEnquiries = () => {
+    return (
         <div>
                 
         </div>
     )
 }
 
-export default Allenquiries;
+export default AllEnquiries;

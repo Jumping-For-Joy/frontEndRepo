@@ -37,9 +37,9 @@ const Navigation =() => {
                     { loggedInUser ? <Link to="/" className="active" onClick={handleSignOut}>Sign Out</Link> : <Link to="/signin" className="active">Sign In</Link>}
                 </li>
             </UnorderedList>
-            <div className="img">
-                    <img src={jfjcastle} alt="jfjcastle" width="45"/>
-            </div>
+                <div className="img">
+                        <img src={jfjcastle} alt="jfjcastle" width="10"/>
+                </div>
         </Nav>
     );
 }

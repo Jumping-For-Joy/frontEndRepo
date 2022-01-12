@@ -39,7 +39,7 @@ export const Form = styled.div `
         text-decoration: none;
         border: none;
         padding: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         display: flex;
         justify-content: center;
         font-family: 'Open Sans', sans-serif;
@@ -52,7 +52,7 @@ export const Form = styled.div `
     }
 
     section { 
-        padding-top: 10px;
+        padding-top: 5px;
         display: flex;
         justify-content: center;
     }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalState } from '../utils/stateContext'
+import {Container, Card, StyledLink, HeaderDiv} from '../styled/allcastles'
 
 
 const AllCastles =() => {
@@ -8,26 +9,27 @@ const AllCastles =() => {
     const {castles} = store
 
     return(
-        <div>
-                <h1>Jumping Castles</h1>
+        <Container>
+            <HeaderDiv>
+                <h3>Jumping Castles For Hire</h3>
                 {/* This is where we map through all castles from the database */}
-                <Link to={`/castles/new`}>Add New Castle</Link>
-                {castles.map((castle, index) => {
-                    return (
-                        <div key={castle.id}>
-                            <Link key={castle.id} to={`/castles/${castle.id}`}>
-                            {castle.img_url && 
-                                <span>
-                                    <img src={castle.img_url} style={{width: "400px"}}/>
-                                    <h3>{castle.name}</h3>
-                                </span>
-                            }
-                            </Link>
-                        </div>
-                    )
-                })}
-            
-        </div>
+                <StyledLink to={`/castles/new`}>Add New Castle</StyledLink>
+            </HeaderDiv>
+            {castles.map((castle, index) => {
+                return (
+                    <Card key={castle.id}>
+                        <StyledLink key={castle.id} to={`/castles/${castle.id}`}>
+                        {castle.img_url && 
+                            <div>
+                                <img src={castle.img_url}/>
+                            </div>
+                        }
+                            <h3>{castle.name}</h3>
+                        </StyledLink>
+                    </Card>
+                )
+            })}
+        </Container>
     )
 }
 
