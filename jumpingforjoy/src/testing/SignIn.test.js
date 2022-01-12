@@ -8,6 +8,7 @@ describe("test signin form", () => {
 
     it("Should check the presence of an email ", () => {
         wrapper = mount(<SignIn />);
+        console.log(wrapper)
         wrapper.find('input[type="text"]').simulate("change"), {
             target: { id: "email", value: "test@text.com" }
         }
