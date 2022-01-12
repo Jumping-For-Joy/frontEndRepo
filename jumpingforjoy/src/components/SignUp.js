@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {signUp} from '../services/authServices';
 import {useGlobalState} from '../utils/stateContext'
+import { Form } from '../styled/signup'
 
 const SignUp = () => {
     const initialState = {
@@ -35,6 +36,7 @@ const SignUp = () => {
     }
 
     return(
+        <Form>
         <div>
             <h3>Create new account</h3>
             <form onSubmit={formSubmit}>
@@ -66,10 +68,13 @@ const SignUp = () => {
                         value={userDetails.password_confirmation}
                         onChange={formHandler} />
                 </label>
-                <button type="submit">Create account</button>
-                {loggedInUser && <p>Success!</p>}
+                <section>
+                    <button type="submit">Create account</button>
+                    {loggedInUser && <p>Success!</p>}
+                </section>
             </form>
         </div>
+        </Form>
     )
 }
 

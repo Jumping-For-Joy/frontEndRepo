@@ -4,5 +4,6 @@ export const Section = styled.section`
     img {
         display: flex;
         margin-top: 100px;
+        justify-content: center;
     }
 `
