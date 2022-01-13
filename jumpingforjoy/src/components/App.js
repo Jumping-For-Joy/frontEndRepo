@@ -19,6 +19,7 @@ import Footer from './Footer';
 import SignUp from './SignUp'
 import SignIn from './SignIn'
 import BookingRequest from './BookingRequest'
+import BookingForm from './BookingForm'
 import { StateContext } from '../utils/stateContext';
 
 
@@ -63,6 +64,8 @@ function App() {
 
               {/* admin routes */}
               <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/enquiries/:id" element={<Enquiry />}/>
+              <Route path="/enquiries/:id/manage" element={<BookingForm />}/>
               
               {/* auth routes */}
               <Route path="/signup" element={<SignUp />}/>

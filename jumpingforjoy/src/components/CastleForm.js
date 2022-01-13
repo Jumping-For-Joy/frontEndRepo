@@ -11,7 +11,7 @@ const CastleForm = ({castle, formSubmit}) => {
 
     const [formData, setFormData] = useState({
         ...castle,
-        available: castle.available ?? true // nullish coalesce? thing - if null or undefined it will set to true
+        available: castle.available ?? true // nullish coalesce - if null or undefined it will set to true
     })
     console.log('initial castle data >', castle)
     console.log('initial form data >', formData)
@@ -62,11 +62,6 @@ const CastleForm = ({castle, formSubmit}) => {
         })    
         .catch(error => console.log(error))  
     }    
-
-    useEffect(() => {
-        console.log('the form data has changed', formData)
-    }, [formData]);
-
 
     console.log('formData -> ', formData)
 

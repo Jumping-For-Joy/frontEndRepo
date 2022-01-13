@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import AllEnquiries from './AllEnquiries'
 import AllBookings from './AllBookings'
 import {Container, DivOne, DivTwo} from '../styled/admin'
 
 const AdminDashboard = () => {
-    const [enquiries, setEnquiries] = useState([])
 
     return (
         <Container>

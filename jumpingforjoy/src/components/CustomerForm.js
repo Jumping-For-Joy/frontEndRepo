@@ -57,7 +57,7 @@ const CustomerForm = ({ setCustomerId }) => {
                     onChange={changeHandler}
                 />
 
-                <label>Street Number</label>
+                <label>Street Number (address where castle is to be delivered to)</label>
                 <input
                     type="text"
                     name="street_number"
