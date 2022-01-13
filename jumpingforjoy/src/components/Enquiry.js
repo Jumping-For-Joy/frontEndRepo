@@ -28,11 +28,13 @@ const Enquiry = () => {
         }))
     }, [id])
 
+    // so the date is output in an easy to read way
     function formatDateForUser(date) {
         let readableDate = new Date(date).toLocaleString('en-GB', {hour12: true})
         return readableDate
     }
 
+    // not able to pre-fill the form with exisiting enquiry data without handling here first
     function formatDateForForm(date) {
         let readableDate = new Date(date).toISOString().slice(0, -8)
         return readableDate

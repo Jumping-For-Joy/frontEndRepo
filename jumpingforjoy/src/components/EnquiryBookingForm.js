@@ -11,9 +11,7 @@ const EnquiryBookingForm = ({handleSubmit, enquiry}) => {
     const [termsRead, setTermsRead] = useState(false)
     const {store} = useGlobalState()
     const {loggedInUser} = store
-
     
-    console.log('testing out ISO date', new Date(enquiry.start_time).toISOString())
     // set terms agreement to true or false
     function checkboxHandler(event) {
         setFormData({
@@ -41,6 +39,7 @@ const EnquiryBookingForm = ({handleSubmit, enquiry}) => {
         // "2022-01-27T15:00"
     }
 
+    // adding notes to booking
     function changeHandler(event) {
         setFormData({
             ...formData,
@@ -73,7 +72,7 @@ const EnquiryBookingForm = ({handleSubmit, enquiry}) => {
                     name="duration"
                     value={4}
                     onChange={durationChangeHandler}
-                    checked={formData.duration}
+                    checked={formData.duration === 4}
                 />
                 4 Hours
                 <input 
@@ -81,7 +80,7 @@ const EnquiryBookingForm = ({handleSubmit, enquiry}) => {
                     name="duration"
                     value={8}
                     onChange={durationChangeHandler}
-                    checked={formData.duration}
+                    checked={formData.duration === 8}
                 />
                 8 Hours
                 <input 
@@ -89,7 +88,7 @@ const EnquiryBookingForm = ({handleSubmit, enquiry}) => {
                     name="duration"
                     value={24}
                     onChange={durationChangeHandler}
-                    checked={formData.duration}
+                    checked={formData.duration === 24}
                 />
                 24 Hours
             </label>

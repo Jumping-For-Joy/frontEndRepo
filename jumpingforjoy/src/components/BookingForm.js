@@ -17,7 +17,6 @@ const BookingForm = () => {
         let start = new Date(startTime)
         let hours = parseInt(duration)
         let endTime = new Date(new Date(start).setHours(start.getHours() + hours))
-        console.log('endtime >', endTime)
         return endTime
     }
 
