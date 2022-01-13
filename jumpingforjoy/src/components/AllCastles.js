@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGlobalState } from '../utils/stateContext'
+import {useGlobalState} from '../utils/stateContext'
 import {Container, Card, StyledLink, HeaderDiv} from '../styled/allcastles'
 
 

@@ -60,6 +60,9 @@ function App() {
 
               {/* enquiry routes */}
               <Route path="/castles/:id/enquiry" element={<BookingRequest />}/>
+
+              {/* admin routes */}
+              <Route path="/admin" element={<AdminDashboard />} />
               
               {/* auth routes */}
               <Route path="/signup" element={<SignUp />}/>
@@ -71,9 +74,6 @@ function App() {
 
 
 
-          <Enquiry />
-          <AllEnquiries />
-          <AdminDashboard />
           <Footer />
           </StateContext.Provider>
       </>

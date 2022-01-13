@@ -2,6 +2,7 @@ import jumpingForJoyAPI from "../config/api";
 
 export async function getEnquiries() {
     const response = await jumpingForJoyAPI.get('/api/enquiries')
+    console.log('from enq services', response.data)
     return response.data
 }
 
