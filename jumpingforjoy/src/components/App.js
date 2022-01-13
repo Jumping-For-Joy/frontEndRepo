@@ -58,22 +58,20 @@ function App() {
                 <Route path="/castles/:id" element={<Castle />}/>
                 <Route path="/castles/:id/update" element={<EditCastle />}/>
 
-                {/* enquiry routes */}
-                <Route path="/castles/:id/enquiry" element={<BookingRequest />}/>
-                
-                {/* auth routes */}
-                <Route path="/signup" element={<SignUp />}/>
-                <Route path="/signin" element={<SignIn />}/>
+              {/* enquiry routes */}
+              <Route path="/castles/:id/enquiry" element={<BookingRequest />}/>
 
-                <Route path="/" element={<Home />}/>
+              {/* admin routes */}
+              <Route path="/admin" element={<AdminDashboard />} />
+              
+              {/* auth routes */}
+              <Route path="/signup" element={<SignUp />}/>
+              <Route path="/signin" element={<SignIn />}/>
+
+              <Route path="/" element={<Home />}/>
             </Routes>
           </Router>
 
-
-
-            <Enquiry />
-            <AllEnquiries />
-            <AdminDashboard />
             <Footer />
             </StateContext.Provider>
       </>
