@@ -30,15 +30,8 @@ const Navigation =() => {
                 <li>
                     { loggedInUser ? <Link to="/" className="active" onClick={handleSignOut}>Sign Out</Link> : <Link to="/signin" className="active">Sign In</Link>}
                 </li>
-                { /* "Hamburger menu" / "Bar icon" to toggle the navigation links */ }
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
+                <li><img src={jfjcastle} alt="jfjcastle" width="10"/></li>
             </UnorderedList>
-                <div className="img">
-                        <img src={jfjcastle} alt="jfjcastle" width="10"/>
-                </div>
-              
         </Nav>
     );
 }

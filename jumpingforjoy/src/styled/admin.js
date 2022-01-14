@@ -3,14 +3,19 @@ import styled from 'styled-components'
 // entire page container
 export const Container = styled.div`
     font-family: 'Open Sans', sans-serif;
+    color: #707070;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
+    a {
+        color: #8AD7DB;
+    }
     a:visited {
         color: #707070;
     }
+
     width: 100%;
     margin: 0;
 
