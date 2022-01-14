@@ -3,7 +3,8 @@ import {useParams, Link} from 'react-router-dom'
 import {getCastle} from '../services/castleServices';
 import {getCustomer} from '../services/customerServices';
 import {getEnquiry} from '../services/enquiryServices'
-import {Card, StyledLink} from '../styled/shared/booking-enquiry'
+import { StyledLink} from '../styled/shared/booking-enquiry'
+import { Form } from '../styled/shared/forms'
 
 const Enquiry = () => {
     const [enquiry, setEnquiry] = useState({})
@@ -42,7 +43,7 @@ const Enquiry = () => {
     }
 
     return (
-        <Card>
+        <Form> {/*Card*/}
             <h3>Booking request #{enquiry.id}</h3>
             <p>Name: {customer.name}</p>
             <p>Castle: {castle.name}</p>
@@ -57,7 +58,7 @@ const Enquiry = () => {
                 >
                 Create booking
             </StyledLink>
-        </Card>
+        </Form>
     )
 }
 
