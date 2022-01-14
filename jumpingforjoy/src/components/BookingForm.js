@@ -38,7 +38,7 @@ const BookingForm = () => {
             {loggedInUser && 
             <>
                 <h3>Booking details</h3>
-                    <EnquiryBookingForm handleSubmit={handleSubmit} enquiry={enquiry}/>
+                    <EnquiryBookingForm handleSubmit={handleSubmit} existingData={enquiry}/>
                     {submitted && <p>Booking submitted!</p>}
             </>
             }

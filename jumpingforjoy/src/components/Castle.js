@@ -24,8 +24,9 @@ const Castle = () => {
         if (confirmDelete === true) {
             deleteCastle(id)
             .then(response => response.data)
-            .catch(error => console.log(error))
+            .catch(error => console.log('delete castle error >', error))
         }
+        console.log('confirm delete>', confirmDelete, 'castle >', castle)
     }
 
     return(

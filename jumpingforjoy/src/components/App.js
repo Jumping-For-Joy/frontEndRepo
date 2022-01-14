@@ -20,6 +20,8 @@ import SignUp from './SignUp'
 import SignIn from './SignIn'
 import BookingRequest from './BookingRequest'
 import BookingForm from './BookingForm'
+import Booking from './Booking'
+import EditBooking from './EditBooking'
 import { StateContext } from '../utils/stateContext';
 
 
@@ -66,7 +68,9 @@ function App() {
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/enquiries/:id" element={<Enquiry />}/>
               <Route path="/enquiries/:id/manage" element={<BookingForm />}/>
-              
+              <Route path="/bookings/:id" element={<Booking />} />
+              <Route path="/bookings/:id/manage" element={<EditBooking />} />
+
               {/* auth routes */}
               <Route path="/signup" element={<SignUp />}/>
               <Route path="/signin" element={<SignIn />}/>

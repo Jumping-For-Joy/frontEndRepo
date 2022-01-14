@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../utils/stateContext'
 
-const EnquiryBookingForm = ({handleSubmit, enquiry}) => {
+const EnquiryBookingForm = ({handleSubmit, existingData}) => {
     // if rendering form for creating confirmed booking, use enq details
     // if new enquiry, initialise with empty object
     const [formData, setFormData] = useState({
-        ...enquiry,
-        start_time: new Date(enquiry.start_time).toISOString().slice(0, -8)
+        ...existingData,
+        start_time: new Date(existingData.start_time).toISOString().slice(0, -8)
     } || {})
     const [termsRead, setTermsRead] = useState(false)
     const {store} = useGlobalState()

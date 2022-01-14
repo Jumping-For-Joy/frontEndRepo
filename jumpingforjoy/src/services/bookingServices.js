@@ -15,3 +15,8 @@ export async function createBooking(booking) {
     const response = await jumpingForJoyAPI.post(`/api/bookings`, booking)
     return response.data
 }
+
+export async function updateBooking(booking) {
+    const response = await jumpingForJoyAPI.put(`/api/bookings/${booking.id}`, booking)
+    return response.data
+}
