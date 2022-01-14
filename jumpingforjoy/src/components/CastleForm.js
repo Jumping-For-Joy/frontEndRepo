@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Form} from '../styled/shared/forms'
 
 const CastleForm = ({castle, formSubmit}) => {
     // const initialState = {
@@ -66,7 +67,7 @@ const CastleForm = ({castle, formSubmit}) => {
     console.log('formData -> ', formData)
 
     return (
-        <div>
+        <Form>
             <form onSubmit={(event) => { event.preventDefault(); formSubmit(formData) }}>
                 <label>Name</label>
                 <input 
@@ -112,7 +113,7 @@ const CastleForm = ({castle, formSubmit}) => {
                 <img src={formData.img_url} style={{width: "300px"}}/>
                 <span><button type="submit">Save changes</button></span>
             </form>
-        </div>
+        </Form>
     )
 }
 
