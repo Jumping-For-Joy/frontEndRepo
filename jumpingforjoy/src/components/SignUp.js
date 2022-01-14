@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {signUp} from '../services/authServices';
 import {useGlobalState} from '../utils/stateContext'
-import { Form } from '../styled/signup'
+import { Form } from '../styled/shared/forms'
 
 const SignUp = () => {
     const initialState = {

@@ -24,22 +24,21 @@ const Navigation =() => {
     return (
         <Nav>
             <UnorderedList>
-                <li>
-                    <Link to="/" className="active">Home</Link>
-                </li>
-                <li>
-                    <Link to="/castles" className="active">Jumping Castles</Link>
-                </li>
-                <li>
-                    <Link to="/about" className="active">About</Link>
-                </li>
+                <li><Link to="/" className="active">Home</Link></li>
+                <li><Link to="/castles" className="active">Jumping Castles</Link></li>
+                <li><Link to="/about" className="active">About</Link></li>
                 <li>
                     { loggedInUser ? <Link to="/" className="active" onClick={handleSignOut}>Sign Out</Link> : <Link to="/signin" className="active">Sign In</Link>}
                 </li>
+                { /* "Hamburger menu" / "Bar icon" to toggle the navigation links */ }
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </UnorderedList>
                 <div className="img">
                         <img src={jfjcastle} alt="jfjcastle" width="10"/>
                 </div>
+              
         </Nav>
     );
 }

@@ -78,6 +78,6 @@ export const Div = styled.div`
               justify-content: center;
               display: flex;
           }
-`
 
+`
 
