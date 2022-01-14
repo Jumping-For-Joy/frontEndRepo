@@ -4,6 +4,7 @@ import {getBooking} from '../services/bookingServices'
 import {getCastle} from '../services/castleServices';
 import {getCustomer} from '../services/customerServices';
 import {Card, StyledLink} from '../styled/shared/booking-enquiry'
+import { Div } from '../styled/booking'
 
 const Booking = () => {
     const [booking, setBooking] = useState({})
@@ -32,7 +33,7 @@ const Booking = () => {
     }
     
     return (
-        <div style={{paddingBottom: '50px'}}>
+        <Div>
             {booking.id && customer.id &&  castle.id &&
                 <div>
                     <Card>
@@ -58,7 +59,7 @@ const Booking = () => {
                     </Card>
                 </div>
             }
-        </div>
+        </Div>
     )
 }
 
