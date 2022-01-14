@@ -60,4 +60,8 @@ export const Form = styled.div `
     input {
         display: column;
     }
+
+    p {
+        color: #707070;
+    }
 `

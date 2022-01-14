@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {signIn} from '../services/authServices';
 import {useGlobalState} from '../utils/stateContext'
-import { Form } from '../styled/signup'
+import { Form } from '../styled/shared/forms'
 
 const SignIn = () => {
     const initialState = {
@@ -56,7 +56,7 @@ const SignIn = () => {
                     <section>
                         <button type="submit">Sign in</button>
                     </section>
-                    <section>
+                    <section class="success notification">
                         {loggedInUser && <p>Success! Welcome {sessionStorage.user}.</p>}
                     </section>
                 </form>
