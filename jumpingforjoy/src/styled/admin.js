@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 // entire page container
 export const Container = styled.div`
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -48,7 +49,6 @@ export const DivOne = styled.div`
     
     // container that displays enquires or bookings
     export const DivTwo = styled.div`
-    border: solid 1px red;
     background-color: white;
     width: 90%;
     margin: 0;

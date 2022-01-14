@@ -1,30 +1,31 @@
 import React, {useState} from 'react';
 import {createEnquiry} from '../services/enquiryServices';
+import EnquiryBookingForm from './EnquiryBookingForm';
 
 const EnquiryForm = ({customerId, castleId}) => {
-    const [formData, setFormData] = useState({})
+    // const [formData, setFormData] = useState({})
     // state to let user know form was successfully submitted
     const [submitted, setSubmitted] = useState(false)
-    const [termsRead, setTermsRead] = useState(false)
+    // const [termsRead, setTermsRead] = useState(false)
 
-    function dateChangeHandler(event) { 
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.value
-        })
-    }
+    // function dateChangeHandler(event) { 
+    //     setFormData({
+    //         ...formData,
+    //         [event.target.name]: event.target.value
+    //     })
+    // }
 
-    function durationChangeHandler(event) {
-        let duration = parseInt(event.target.value)
-        setFormData({
-            ...formData,
-            [event.target.name]: duration
-        })
-    }
+    // function durationChangeHandler(event) {
+    //     let duration = parseInt(event.target.value)
+    //     setFormData({
+    //         ...formData,
+    //         [event.target.name]: duration
+    //     })
+    // }
 
-    function handleTerms() {
-        setTermsRead(true)
-    }
+    // function handleTerms() {
+    //     setTermsRead(true)
+    // }
 
     function getEndTime(startTime, duration) {
         let start = new Date(startTime)
@@ -34,21 +35,19 @@ const EnquiryForm = ({customerId, castleId}) => {
         return endTime
     }
 
-    function checkboxHandler(event) {
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.checked
-        })
-    }
+    // function checkboxHandler(event) {
+    //     setFormData({
+    //         ...formData,
+    //         [event.target.name]: event.target.checked
+    //     })
+    // }
 
-    function handleSubmit(event) {
-        event.preventDefault()
+    function handleSubmit(submittedData) {
         createEnquiry({
-            ...formData,
+            ...submittedData,
             customer_id: customerId,
-            end_time: getEndTime(formData.start_time, formData.duration), 
-            castle_id: castleId,
-            paid: false
+            end_time: getEndTime(submittedData.start_time, submittedData.duration), 
+            castle_id: castleId
         })
         .then((response) => console.log(response))
         .catch((error) => console.log(error))
@@ -58,8 +57,8 @@ const EnquiryForm = ({customerId, castleId}) => {
     return (
         <div>
             <h3>Booking Request Details</h3>
-            <form onSubmit={handleSubmit}>
-                <label>Booking Start Time</label>
+                <EnquiryBookingForm handleSubmit={handleSubmit} />
+                {/* <label>Booking Start Time</label>
                     <input
                         type="datetime-local"
                         name="start_time"
@@ -103,11 +102,9 @@ const EnquiryForm = ({customerId, castleId}) => {
                         disabled={!termsRead}
                         required="true"
                     />
-
-                <button type="submit">Submit booking request</button>
+ */}
                 {submitted && <p>Booking request successfully submitted!</p>}
 
-            </form>
         </div>
     )
 }

@@ -23,16 +23,15 @@ const AllEnquiries = () => {
                 return (
                     <Card key={enquiry.id}>
                         <Link key={enquiry.id} to={`/enquiries/${enquiry.id}`}>
-                            <h3>{enquiry.customer_id}</h3>
+                            <h3>Enquiry #{enquiry.id}</h3>
                         </Link>
-                            <p>Paid: {enquiry.paid}</p>
+                            {/* <p>Paid: {enquiry.paid}</p>
                             <p>Start: {enquiry.start_time}</p>
                             <p>Duration: {enquiry.duration}</p>
                             <p>Terms agreement:{enquiry.terms_agreement}</p>
                             <p>Castle: {enquiry.castle_id}</p>
                             <p>Notes: {enquiry.notes}</p>
-                            <p>Total: {enquiry.total}</p>
-                            {/* Approve or edit request goes here */}
+                            <p>Total: {enquiry.total}</p> */}
                     </Card>
                 )
             })}

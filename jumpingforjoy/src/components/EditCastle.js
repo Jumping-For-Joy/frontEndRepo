@@ -5,15 +5,7 @@ import {useGlobalState} from '../utils/stateContext'
 import CastleForm from './CastleForm'
 
 const EditCastle = () => {
-    const initialState = {
-        name: undefined,
-        description: undefined,
-        imageUrl: undefined,
-        price: undefined,
-        available: undefined
-    }
-
-    const [formData, setFormData] = useState(initialState)
+    const [formData, setFormData] = useState({})
     const {id} = useParams()
     const {store} = useGlobalState()
     const {loggedInUser} = store
@@ -36,7 +28,7 @@ const EditCastle = () => {
 
     return(
         <div>
-            {/* not rendering the form until we have the data bedcause id must be present before it loads */}            
+            {/* not rendering the form until we have the data */}            
             {loggedInUser && formData.id &&  
                 <div>
                     <CastleForm formSubmit={formSubmit} castle={formData} />
