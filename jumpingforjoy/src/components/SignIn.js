@@ -38,23 +38,32 @@ const SignIn = () => {
         <Form>
             <div>
                 <h3>Sign in</h3>
-                <form onSubmit={formSubmit}>
+                <form onSubmit={formSubmit} data-testid="signInForm">
                     <label>Email:
                         <input 
                             type="email" 
                             name="email"
                             value={userDetails.email}
-                            onChange={formHandler} />
+                            onChange={formHandler}
+                            data-testid="email"
+                        />
                     </label>
                     <label>Password:
                         <input 
                             type="password" 
                             name="password"
                             value={userDetails.password}
-                            onChange={formHandler} />
+                            onChange={formHandler} 
+                            data-testid="password"
+                        />
                     </label>
                     <section>
-                        <button type="submit">Sign in</button>
+                        <button 
+                            type="submit"
+                            data-testid="submitButton"
+                        >
+                            Sign in
+                        </button>
                     </section>
                     <section class="success notification">
                         {loggedInUser && <p>Success! Welcome {sessionStorage.user}.</p>}
