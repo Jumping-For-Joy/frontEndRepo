@@ -13,15 +13,17 @@ export const Nav = styled.nav`
     margin-right: 5px;
     margin-top: 20px;
     border-radius: 20px;
-
+    
+    
 
     img {
-        padding: 10px;
         float: right;
-        width: 15%; 
+        width: 20%;
+        
+        justify content: center;
     }
 
-    
+
         
     
 
@@ -41,9 +43,7 @@ export const Nav = styled.nav`
         border-radius: 20px;
 
         img {
-            float: right;
-            width: 15%; 
-            
+           
         }
     }
 `
@@ -57,8 +57,8 @@ export const UnorderedList = styled.ul`
 
     li a {
         display: flex; 
-        flex-direction: row;
-        padding: 1px 1px;
+        flex-direction: inline-block;
+        padding-top: 6px;
         font-size: 10px;
         color: #707070;
         font-family: 'Open Sans', sans-serif;

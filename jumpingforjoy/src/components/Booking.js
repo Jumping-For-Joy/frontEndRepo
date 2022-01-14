@@ -3,6 +3,7 @@ import {useParams, Link} from 'react-router-dom'
 import {getBooking} from '../services/bookingServices'
 import {getCastle} from '../services/castleServices';
 import {getCustomer} from '../services/customerServices';
+import { Div } from '../styled/booking'
 
 const Booking = () => {
     const [booking, setBooking] = useState({})
@@ -31,7 +32,7 @@ const Booking = () => {
     }
     
     return (
-        <div>
+        <Div>
             <h3>Confirmed Booking #{booking.id}</h3>
             <p>Name: {customer.name}</p>
             <p>Castle: {castle.name}</p>
@@ -47,7 +48,7 @@ const Booking = () => {
                 >
                 Manage booking
             </Link>
-        </div>
+        </Div>
     )
 }
 
