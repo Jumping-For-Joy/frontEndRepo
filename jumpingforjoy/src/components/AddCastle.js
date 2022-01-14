@@ -2,6 +2,7 @@ import React from 'react';
 import {useGlobalState} from '../utils/stateContext'
 import {createCastle} from '../services/castleServices'
 import CastleForm from './CastleForm'
+import {Form} from '../styled/shared/forms'
 
 const AddCastle = () => {
     // used to initiate state and to clear form once a castle is created
@@ -28,11 +29,12 @@ const AddCastle = () => {
     }    
 
     return (
-        <div>
+        
+        <Form>
             {loggedInUser && 
                 <CastleForm formSubmit={formSubmit} castle={{}} />
             }
-        </div>
+        </Form>
     )
     }
 

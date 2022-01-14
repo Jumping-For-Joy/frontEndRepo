@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom'
 import {getCastle, updateCastle} from '../services/castleServices'
 import {useGlobalState} from '../utils/stateContext'
 import CastleForm from './CastleForm'
+import { Form } from '../styled/shared/forms'
 
 const EditCastle = () => {
     const [formData, setFormData] = useState({})
@@ -27,13 +28,13 @@ const EditCastle = () => {
     }
 
     return(
-        <div>
+        <Form>
             {/* not rendering the form until we have the data */}            
             {loggedInUser && formData.id &&  
                 <div>
                     <CastleForm formSubmit={formSubmit} castle={formData} />
                 </div>}
-        </div>
+        </Form>
     )
 }
 
