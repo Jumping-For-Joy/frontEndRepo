@@ -64,6 +64,7 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                         value={formData.start_time}
                         onChange={changeHandler}
                         required={true}
+                        data-testid="start"
                     />
 
                 <label>Booking Duration
@@ -74,6 +75,7 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                             value={4}
                             onChange={durationChangeHandler}
                             checked={formData.duration === 4}
+                            data-testid="fourHours"
                         />
                         4 Hours
                     </span>
@@ -102,11 +104,12 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
 
                 </label>
 
-                <label>Notes (optional)</label>
+                <label htmlFor="notes">Notes (optional)</label>
                     <textarea
                         name="notes"
                         value={formData.notes}
                         onChange={changeHandler}
+                        data-testid="notes"
                     >{formData.notes}</textarea>
 
                 <Link to="/Jumping-For-Joy-TCSI.pdf" target="blank" onClick={handleTerms}>Terms and Conditions</Link>
@@ -119,6 +122,7 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                             onChange={checkboxHandler}
                             disabled={!termsRead}
                             required={true}
+                            data-testid="terms"
                         />
                     <label>I have read and agree to the terms agreement</label>
                 </span>
@@ -137,7 +141,7 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                     </span>
                 }
 
-                <button type="submit">Submit</button>
+                <button type="submit" data-testid="submitButton">Submit</button>
             </StyledForm>
         </div>
     )

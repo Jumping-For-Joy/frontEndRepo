@@ -8,8 +8,11 @@ const SignIn = () => {
     const navigate = useNavigate()
     const [userDetails, setUserDetails] = useState('')
     const {dispatch} = useGlobalState()
+    const [showError, setShowError] = useState(false);
 
     function formHandler(event) {
+        event.preventDefault();
+        setShowError(false);
         setUserDetails({
             ...userDetails, 
             [event.target.name]: event.target.value
@@ -18,21 +21,26 @@ const SignIn = () => {
 
     function formSubmit(event) {
         event.preventDefault()
+        setShowError(false);
         signIn(userDetails)
-        .then(({email, jwt}) => {
-            sessionStorage.setItem("token", jwt)
-            sessionStorage.setItem("user", email)
-            dispatch({type: 'setLoggedInUser', data: email})
-            dispatch({type: 'setToken', data: jwt})
-        })
-        .catch((error) => console.log(error))
-        .finally(navigate('/admin'))       
+            .then(({email, jwt}) => {
+                sessionStorage.setItem("token", jwt)
+                sessionStorage.setItem("user", email)
+                dispatch({type: 'setLoggedInUser', data: email})
+                dispatch({type: 'setToken', data: jwt})
+                navigate('/admin')
+            })
+            .catch((error) => {
+                setShowError(true)   
+                // console.log(error)
+            })
     }
 
     return(
         <Form>
             <div>
                 <h3>Sign in</h3>
+                {showError && <p style={{ color: 'red', textAlign: 'center' }}>Login unsuccessful</p>}
                 <form onSubmit={formSubmit} data-testid="signInForm">
                     <label>Email:
                         <input 
@@ -48,7 +56,7 @@ const SignIn = () => {
                             type="password" 
                             name="password"
                             value={userDetails.password}
-                            onChange={formHandler} 
+                            onChange={formHandler}
                             data-testid="password"
                         />
                     </label>

@@ -2,8 +2,6 @@
 import React, { useReducer, useEffect } from 'react'
 import { getCastles } from '../services/castleServices'
 import stateReducer from '../utils/stateReducer'
-
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Navigation';
 import Home from './Home';
@@ -11,7 +9,6 @@ import About from './About';
 import AllCastles from './AllCastles';
 import Castle from './Castle';
 import Enquiry from './Enquiry';
-import AllEnquiries from './AllEnquiries';
 import AdminDashboard from './AdminDashboard';
 import AddCastle from './AddCastle';
 import EditCastle from './EditCastle';
@@ -50,8 +47,6 @@ function App() {
   }
 
   return (
-    
-    
       <div style={containerStyles}>
           <StateContext.Provider value={{store, dispatch}}>
 
