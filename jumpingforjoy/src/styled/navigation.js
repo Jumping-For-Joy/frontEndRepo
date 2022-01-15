@@ -6,9 +6,9 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%; 
     background: #F8FEFE;
     height: 70px;
+    width: calc(100% - 40px);
     border-radius: 20px;
 
     img {
@@ -22,13 +22,10 @@ export const Nav = styled.nav`
     @media(min-width: 1200px) {
         display: flex;
         justify-content: left;
-        width: 98%; 
         flex-direction: space-between;
         background: #F8FEFE;
         height: 50px;
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: 20px;
+        margin: 20px 20px 0;
         border-radius: 20px;
     }
 `
