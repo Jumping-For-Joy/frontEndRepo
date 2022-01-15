@@ -39,6 +39,7 @@ const CustomerForm = ({ setCustomerId }) => {
                     name="name"
                     value={formData.name}
                     onChange={changeHandler}
+                    required={true}
                 />
 
                 <label>Email</label>
@@ -47,6 +48,7 @@ const CustomerForm = ({ setCustomerId }) => {
                     name="email"
                     value={formData.email}
                     onChange={changeHandler}
+                    required={true}
                 />
 
                 <label>Phone Number</label>
@@ -55,14 +57,17 @@ const CustomerForm = ({ setCustomerId }) => {
                     name="phone_number"
                     value={formData.phone_number}
                     onChange={changeHandler}
+                    required={true}
                 />
 
-                <label>Street Number (address where castle is to be delivered to)</label>
+                <p>Address of event castle will be delivered to:</p>
+                <label>Street Number (if public space provide name here, e.g. Beth Boyd Park)</label>
                 <input
                     type="text"
                     name="street_number"
                     value={formData.street_number}
                     onChange={changeHandler}
+                    required={true}
                 />
 
                 <label>Street Name</label>
@@ -71,6 +76,7 @@ const CustomerForm = ({ setCustomerId }) => {
                     name="street_name"
                     value={formData.street_name}
                     onChange={changeHandler}
+                    required={true}
                 />
 
                 <label>Suburb</label>
@@ -79,6 +85,7 @@ const CustomerForm = ({ setCustomerId }) => {
                     name="suburb"
                     value={formData.suburb}
                     onChange={changeHandler}
+                    required={true}
                 />
 
                 <label>Postcode</label>
@@ -87,9 +94,10 @@ const CustomerForm = ({ setCustomerId }) => {
                     name="postcode"
                     value={formData.postcode}
                     onChange={changeHandler}
+                    required={true}
                 />
 
-                <label>Notes</label>
+                <label>Notes about hire space - e.g. power requirements (optional)</label>
                 <input
                     type="text"
                     name="notes"

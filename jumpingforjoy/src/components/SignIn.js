@@ -1,17 +1,13 @@
-import React, {useState} from 'react';
-import {signIn} from '../services/authServices';
-import {useGlobalState} from '../utils/stateContext'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+import { signIn } from '../services/authServices';
+import { useGlobalState } from '../utils/stateContext'
 import { Form } from '../styled/shared/forms'
 
 const SignIn = () => {
-    const initialState = {
-        email: "",
-        password: ""
-    }
-
-    const [userDetails, setUserDetails] = useState(initialState)
-    const {store, dispatch} = useGlobalState()
-    const {loggedInUser} = store
+    const navigate = useNavigate()
+    const [userDetails, setUserDetails] = useState('')
+    const {dispatch} = useGlobalState()
 
     function formHandler(event) {
         setUserDetails({
@@ -22,7 +18,6 @@ const SignIn = () => {
 
     function formSubmit(event) {
         event.preventDefault()
-        // this is our call to database
         signIn(userDetails)
         .then(({email, jwt}) => {
             sessionStorage.setItem("token", jwt)
@@ -30,8 +25,8 @@ const SignIn = () => {
             dispatch({type: 'setLoggedInUser', data: email})
             dispatch({type: 'setToken', data: jwt})
         })
-        .catch((error) => console.log(error))       
-        setUserDetails(initialState)
+        .catch((error) => console.log(error))
+        .finally(navigate('/admin'))       
     }
 
     return(
@@ -64,9 +59,6 @@ const SignIn = () => {
                         >
                             Sign in
                         </button>
-                    </section>
-                    <section class="success notification">
-                        {loggedInUser && <p>Success! Welcome {sessionStorage.user}.</p>}
                     </section>
                 </form>
             </div>

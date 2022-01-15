@@ -5,46 +5,43 @@ export const Nav = styled.nav`
 
     // mobile 
 
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 90%; 
     background: #F8FEFE;
     height: 70px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 20px;
     border-radius: 20px;
 
-
-    img {
-        padding: 10px;
-        float: right;
-        width: 15%; 
+    div {
+        padding-right: 10px;
+        height: 90%;
+        img {
+            height: 90%;
+            width: auto;
+        }
     }
-
-    
-        
-    
 
     // desktop
 
     @media(min-width: 1200px) {
 
-        display: flex;
-        justify-content: left;
-        width: 98%; 
-        flex-direction: space-between;
-        background: #F8FEFE;
-        height: 50px;
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: 20px;
-        border-radius: 20px;
+        // display: flex;
+        // justify-content: left;
+        // width: 98%; 
+        // flex-direction: space-between;
+        // background: #F8FEFE;
+        // height: 50px;
+        // margin-left: 20px;
+        // margin-right: 20px;
+        // margin-top: 20px;
+        // border-radius: 20px;
 
-        img {
-            float: right;
-            width: 15%; 
+        // img {
+        //     float: right;
+        //     width: 15%; 
             
-        }
+        // }
     }
 `
 

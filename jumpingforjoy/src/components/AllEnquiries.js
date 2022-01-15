@@ -16,10 +16,9 @@ const AllEnquiries = () => {
         .catch((error) => console.log(error))
     }, [])
 
-
     return (
         <div>
-            {enquiries.map((enquiry, index) => {
+            {enquiries.sort((a, b) => a.id > b.id ? 1:-1).map((enquiry, index) => {
                 return (
                     <Card key={enquiry.id}>
                         <Link key={enquiry.id} to={`/enquiries/${enquiry.id}`}>

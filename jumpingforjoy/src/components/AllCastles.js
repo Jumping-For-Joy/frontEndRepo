@@ -24,7 +24,7 @@ const AllCastles =() => {
                         <StyledLink key={castle.id} to={`/castles/${castle.id}`}>
                         {castle.img_url && 
                             <div>
-                                <img src={castle.img_url}/>
+                                <img src={castle.img_url} alt={castle.name} />
                             </div>
                         }
                             <h3>{castle.name}</h3>

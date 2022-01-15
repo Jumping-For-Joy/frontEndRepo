@@ -41,11 +41,17 @@ function App() {
     .catch((error) => console.log(error))
   }, [])
 
+  const containerStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 
   return (
     
     
-      <>
+      <div style={containerStyles}>
           <StateContext.Provider value={{store, dispatch}}>
 
           <Router>
@@ -77,11 +83,11 @@ function App() {
 
               <Route path="/" element={<Home />}/>
             </Routes>
+            <Footer />
           </Router>
 
-            <Footer />
             </StateContext.Provider>
-      </>
+      </div>
       
   );
 }

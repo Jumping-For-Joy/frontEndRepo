@@ -1,23 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 const CastleForm = ({castle, formSubmit}) => {
-    // const initialState = {
-    //     name: undefined,
-    //     description: undefined,
-    //     img_url: undefined,
-    //     price: undefined,
-    //     available: undefined
-    // }
-
     const [formData, setFormData] = useState({
         ...castle,
         available: castle.available ?? true // nullish coalesce - if null or undefined it will set to true
     })
-    console.log('initial castle data >', castle)
-    console.log('initial form data >', formData)
     const [image, setImage] = useState(undefined)
 
-    // // reassign the state to the current form values being entered
     function changeHandler(event) {
         event.preventDefault()
         setFormData({
@@ -63,8 +52,6 @@ const CastleForm = ({castle, formSubmit}) => {
         .catch(error => console.log(error))  
     }    
 
-    console.log('formData -> ', formData)
-
     return (
         <div>
             <form onSubmit={(event) => { event.preventDefault(); formSubmit(formData) }}>
@@ -109,7 +96,7 @@ const CastleForm = ({castle, formSubmit}) => {
                 />
 
                 <button onClick={fileUpload}>Upload image</button>
-                <img src={formData.img_url} style={{width: "300px"}}/>
+                <img src={formData.img_url} style={{width: "300px"}} alt="jumping castle" />
                 <span><button type="submit">Save changes</button></span>
             </form>
         </div>

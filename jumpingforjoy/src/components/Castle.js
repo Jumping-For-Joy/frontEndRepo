@@ -35,7 +35,7 @@ const Castle = () => {
         <Div>
             {castle.img_url && 
                 <div>
-                    <img src={castle.img_url} style={{width: "400px"}}/>
+                    <img src={castle.img_url} style={{width: "400px"}} alt={castle.name}/>
                 </div>
             }
             <h3>{castle.name}</h3>
