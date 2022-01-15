@@ -3,7 +3,7 @@ import {useParams, Link} from 'react-router-dom'
 import {getBooking} from '../services/bookingServices'
 import {getCastle} from '../services/castleServices';
 import {getCustomer} from '../services/customerServices';
-import {Card, StyledLink} from '../styled/shared/booking-enquiry'
+import { Card, StyledLink } from '../styled/shared/booking-enquiry'
 import { Div } from '../styled/booking'
 
 const Booking = () => {

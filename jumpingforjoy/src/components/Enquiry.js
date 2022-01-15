@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {useParams, Link} from 'react-router-dom'
-import {getCastle} from '../services/castleServices';
-import {getCustomer} from '../services/customerServices';
-import {getEnquiry} from '../services/enquiryServices'
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom'
+import { getCastle } from '../services/castleServices';
+import { getCustomer } from '../services/customerServices';
+import { getEnquiry } from '../services/enquiryServices'
 import { StyledLink} from '../styled/shared/booking-enquiry'
 import { Form } from '../styled/shared/forms'
 
