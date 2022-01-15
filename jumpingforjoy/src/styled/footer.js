@@ -1,50 +1,30 @@
 import styled from 'styled-components'
 
 export const StyledFooter = styled.div`
+    position: absolute;
+    bottom: 0;
     background: #F8FEFE;
-    margin-top: auto;
-    justify-content: center;
-    height: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
     font-family: 'Open Sans', sans-serif;
     color: #707070;
-    position: fixed;
-    bottom: 0;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 20px;
     width: 85%;
-
+    text-align: center;
     p {
-        text-align: center;
-        padding-bottom: 15px;
-        
+        margin: 5px;
     }
-
+    a, a:active, a:visited {
+        text-decoration: none;
+        color: #707070;
+        padding: 10px;
+    }
     // desktop
     @media(min-width: 1200px) {
-
-        background: #F8FEFE;
-        margin-top: auto;
-        justify-content: center;
-        height: 50px;
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        border-radius: 20px;
-        font-family: 'Open Sans', sans-serif;
-        color: #707070;
-        position: fixed;
-        bottom: 0;
         width: 97%;
-    
-        p {
-            text-align: center;
-            padding-bottom: 15px;
-            
-        }  
     }
-
 `

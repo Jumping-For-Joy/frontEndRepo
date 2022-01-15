@@ -1,14 +1,15 @@
-import React, {useState} from 'react'
-import {useLocation} from 'react-router-dom'
+import React from 'react'
+import {useLocation, useNavigate} from 'react-router-dom'
 import EnquiryBookingForm from './EnquiryBookingForm'
 import {createBooking} from '../services/bookingServices'
 import {useGlobalState} from '../utils/stateContext'
 
+// create a new booking based off an enquiry
 const BookingForm = () => {
     const location = useLocation()
+    const navigate = useNavigate()
     // inherit enquiry from previous component state
     const {enquiry} = location.state
-    const [submitted, setSubmitted] = useState(false)
     const {store} = useGlobalState()
     const {loggedInUser} = store
 
@@ -30,7 +31,7 @@ const BookingForm = () => {
         })
         .then((response) => console.log(response))
         .catch((error) => console.log(error))
-        setSubmitted(true)
+        .finally((response) => navigate(`/bookings/${response.id}`))
     }
 
     return (
@@ -38,8 +39,7 @@ const BookingForm = () => {
             {loggedInUser && 
             <>
                 <h3>Booking details</h3>
-                    <EnquiryBookingForm handleSubmit={handleSubmit} existingData={enquiry}/>
-                    {submitted && <p>Booking submitted!</p>}
+                <EnquiryBookingForm handleSubmit={handleSubmit} existingData={enquiry}/>
             </>
             }
         </>

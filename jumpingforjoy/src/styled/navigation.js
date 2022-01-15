@@ -1,36 +1,25 @@
 import styled from 'styled-components'
 
-
 export const Nav = styled.nav`
-
     // mobile 
 
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 90%; 
     background: #F8FEFE;
     height: 70px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 20px;
     border-radius: 20px;
-    
-    
 
     img {
-        float: right;
-        width: 20%;
-        
-        justify content: center;
+        height: calc(100% - 10px);
+        margin-left: auto;
+        padding: 10px;
     }
-
-
-        
-    
 
     // desktop
 
     @media(min-width: 1200px) {
-
         display: flex;
         justify-content: left;
         width: 98%; 
@@ -41,15 +30,10 @@ export const Nav = styled.nav`
         margin-right: 20px;
         margin-top: 20px;
         border-radius: 20px;
-
-        img {
-           
-        }
     }
 `
 
 export const UnorderedList = styled.ul`
-    
     // mobile 
 
     list-style-type: none;
@@ -71,15 +55,9 @@ export const UnorderedList = styled.ul`
         color: #8AD7DB;
     }
 
-
-
-    
-
-    
     // desktop
 
     @media(min-width: 1200px) {
-
         list-style-type: none;
         margin: 4px;
         padding: 4px;
@@ -87,8 +65,6 @@ export const UnorderedList = styled.ul`
         li {
             float: left;
             padding: 7px;
-            
-            
         }
 
         li a {
@@ -105,8 +81,5 @@ export const UnorderedList = styled.ul`
             transform: scale(1.1);
             color: #8AD7DB;
         }
-        
-    
-        
-    
+    }
 `

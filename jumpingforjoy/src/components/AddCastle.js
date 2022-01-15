@@ -29,14 +29,13 @@ const AddCastle = () => {
     }    
 
     return (
-        
         <Form>
             {loggedInUser && 
                 <CastleForm formSubmit={formSubmit} castle={{}} />
             }
         </Form>
     )
-    }
+}
 
     // function changeHandler(event) {
     //     event.preventDefault()

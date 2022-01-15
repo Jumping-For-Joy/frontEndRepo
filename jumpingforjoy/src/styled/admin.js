@@ -17,6 +17,7 @@ export const Container = styled.div`
     }
 
     width: 100%;
+    margin-bottom: 80px;
     margin: 0;
 
     // tablet

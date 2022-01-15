@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import {useParams, Link} from 'react-router-dom'
-import {getCastle} from '../services/castleServices';
-import {getCustomer} from '../services/customerServices';
-import {getEnquiry} from '../services/enquiryServices'
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom'
+import { getCastle } from '../services/castleServices';
+import { getCustomer } from '../services/customerServices';
+import { getEnquiry } from '../services/enquiryServices'
+import { StyledLink} from '../styled/shared/booking-enquiry'
 import { Form } from '../styled/shared/forms'
 
 const Enquiry = () => {
@@ -42,24 +43,22 @@ const Enquiry = () => {
     }
 
     return (
-        
-            <Form>
-                <h3>Booking request #{enquiry.id}</h3>
-                <p>Name: {customer.name}</p>
-                <p>Castle: {castle.name}</p>
-                <p>Booking start: {formatDateForUser(enquiry.start_time)}</p>
-                <p>Duration: {enquiry.duration} hours</p>
-                <p>{enquiry.terms_agreement ? "✅ Agreed" : "⛔️ Has not yet agreed" } to terms.</p>
-                <p>{enquiry.paid ? "✅ Paid" : "⛔️ Not yet paid" }.</p>
-                {/* <Link to={`/enquiries/${enquiry.id}/manage`}>Manage enquiry</Link> */}
-                <Link
-                    to={`/enquiries/${enquiry.id}/manage`}
-                    state={{ enquiry }}
-                    >
-                    Create booking
-                </Link>
-            </Form>
-        
+        <Form> {/*Card*/}
+            <h3>Booking request #{enquiry.id}</h3>
+            <p>Name: {customer.name}</p>
+            <p>Castle: {castle.name}</p>
+            <p>Booking start: {formatDateForUser(enquiry.start_time)}</p>
+            <p>Duration: {enquiry.duration} hours</p>
+            <p>{enquiry.terms_agreement ? "✅ Agreed" : "⛔️ Has not yet agreed" } to terms.</p>
+            <p>{enquiry.paid ? "✅ Paid" : "⛔️ Not yet paid" }.</p>
+            {/* <Link to={`/enquiries/${enquiry.id}/manage`}>Manage enquiry</Link> */}
+            <StyledLink
+                to={`/enquiries/${enquiry.id}/manage`}
+                state={{ enquiry }}
+                >
+                Create booking
+            </StyledLink>
+        </Form>
     )
 }
 

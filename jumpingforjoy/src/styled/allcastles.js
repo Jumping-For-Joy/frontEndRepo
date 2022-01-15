@@ -3,10 +3,12 @@ import {Link} from 'react-router-dom'
 
 export const Container = styled.div`
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding-bottom: 70px;
     a:visited {
         color: #707070;
     }
@@ -37,7 +39,6 @@ export const HeaderDiv = styled.div`
 
     a {
         text-decoration: none;
-        border: solid 1px grey;
         padding: 15px;
         font-family: 'Open Sans', sans-serif;
         font-size: 15px;
@@ -45,7 +46,6 @@ export const HeaderDiv = styled.div`
         border-radius: 20px;
         text-decoration: none;
         border: none;
-        margin: 50px;
         display: inline;
         align-items: center;
     }
@@ -56,7 +56,7 @@ export const HeaderDiv = styled.div`
     }
 
     h3 {
-        margin-top; 20px;
+        margin-top: 20px;
         margin-bottom: 20px;
         padding-top: 20px;
         font-size: 20px;
@@ -72,7 +72,7 @@ export const HeaderDiv = styled.div`
     @media(min-width: 1200px) {
 
         h3 {
-            margin-top; 20px;
+            margin-top: 20px;
             margin-bottom: 20px;
             padding-top: 20px;
             font-size: 30px;
@@ -92,7 +92,7 @@ export const HeaderDiv = styled.div`
             border-radius: 20px;
             text-decoration: none;
             border: none;
-            margin-bottom: 50px;
+            margin-bottom: 15px;
             display: inline;
             align-items: center;
         }
@@ -105,6 +105,7 @@ export const Card = styled.div`
     //mobile 
     
     width: 300px;
+    height: 400px;
     margin: 0 auto;
     margin-top: 40px;
     margin-bottom: 50px;
@@ -119,8 +120,11 @@ export const Card = styled.div`
     color: #707070;
     font-family: 'Open Sans', sans-serif;
 
+    // object-fit ensures different sized images all look the same size on the cards
     img {
-        width: 90%;
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
     }
 
     h3 {
@@ -139,9 +143,6 @@ export const Card = styled.div`
     @media(min-width: 1200px) {
         margin: auto;
         margin-bottom: 10px;
-    
-
-        
     }
 `
 
@@ -154,18 +155,10 @@ export const StyledLink = styled(Link)`
     flex-direction: column;
     color: #707070;
 
-    
-    
     // desktop
-
     @media(min-width: 1200px) {
-        
         h3 {
             font-size: 20px;
         }
-    
-
-        
     }
-
 `

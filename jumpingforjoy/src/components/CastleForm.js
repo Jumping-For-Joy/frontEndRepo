@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Form} from '../styled/shared/forms'
+import React, { useState } from 'react';
+import { Form } from '../styled/shared/forms'
 
 const CastleForm = ({castle, formSubmit}) => {
     // const initialState = {
@@ -110,7 +110,7 @@ const CastleForm = ({castle, formSubmit}) => {
                 />
 
                 <button onClick={fileUpload}>Upload image</button>
-                <img src={formData.img_url} style={{width: "300px"}}/>
+                <img src={formData.img_url} style={{width: "300px"}} alt="jumping castle" />
                 <span><button type="submit">Save changes</button></span>
             </form>
         </Form>

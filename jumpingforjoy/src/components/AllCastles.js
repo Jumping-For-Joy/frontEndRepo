@@ -5,18 +5,15 @@ import {Container, Card, StyledLink, HeaderDiv} from '../styled/allcastles'
 
 const AllCastles =() => {
     const {store} = useGlobalState()
-    const {castles} = store
+    const {castles, loggedInUser} = store
 
     return(
         <Container>
             <HeaderDiv>
-                <section>
-                    <h3>Jumping Castles</h3>
-                </section>
-                <section>
-                    {/* This is where we map through all castles from the database */}
+                <h3>Jumping Castles</h3>
+                {loggedInUser && 
                     <StyledLink to={`/castles/new`}>Add New Castle</StyledLink>
-                </section>
+                }    
             </HeaderDiv>
             {castles.map((castle, index) => {
                 return (
@@ -24,7 +21,7 @@ const AllCastles =() => {
                         <StyledLink key={castle.id} to={`/castles/${castle.id}`}>
                         {castle.img_url && 
                             <div>
-                                <img src={castle.img_url}/>
+                                <img src={castle.img_url} alt={castle.name} />
                             </div>
                         }
                             <h3>{castle.name}</h3>
