@@ -57,7 +57,7 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
     return (
         <div>
             <StyledForm onSubmit={(event) => { event.preventDefault(); handleSubmit(formData) }}>
-                <label>Booking Start Time
+                <label>Booking Start Time</label>
                     <input
                         type="datetime-local"
                         name="start_time"
@@ -65,60 +65,67 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                         onChange={changeHandler}
                         required={true}
                     />
-                </label>
 
                 <label>Booking Duration
-                    <input 
-                        type="radio"
-                        name="duration"
-                        value={4}
-                        onChange={durationChangeHandler}
-                        checked={formData.duration === 4}
-                    />
-                    4 Hours
-                    <input 
-                        type="radio"
-                        name="duration"
-                        value={8}
-                        onChange={durationChangeHandler}
-                        checked={formData.duration === 8}
-                    />
-                    8 Hours
-                    <input 
-                        type="radio"
-                        name="duration"
-                        value={24}
-                        onChange={durationChangeHandler}
-                        checked={formData.duration === 24}
-                    />
-                    24 Hours
+                    <span>
+                        <input 
+                            type="radio"
+                            name="duration"
+                            value={4}
+                            onChange={durationChangeHandler}
+                            checked={formData.duration === 4}
+                        />
+                        4 Hours
+                    </span>
+
+                    <span>
+                        <input 
+                            type="radio"
+                            name="duration"
+                            value={8}
+                            onChange={durationChangeHandler}
+                            checked={formData.duration === 8}
+                        />
+                        8 Hours
+                    </span>
+
+                    <span>
+                        <input 
+                            type="radio"
+                            name="duration"
+                            value={24}
+                            onChange={durationChangeHandler}
+                            checked={formData.duration === 24}
+                        />
+                        24 Hours
+                    </span>
+
                 </label>
 
-                <label>Notes (optional)
-                    <input
-                        type="textarea"
+                <label>Notes (optional)</label>
+                    <textarea
                         name="notes"
                         value={formData.notes}
                         onChange={changeHandler}
-                    />
-                </label>
+                    >{formData.notes}</textarea>
+
                 <Link to="/Jumping-For-Joy-TCSI.pdf" target="blank" onClick={handleTerms}>Terms and Conditions</Link>
-                <label>I have read and agree to the terms agreement
-                    <input
-                        id="terms_agreement"
-                        type="checkbox"
-                        name="terms_agreement"
-                        checked={formData.terms_agreement} 
-                        onChange={checkboxHandler}
-                        disabled={!termsRead}
-                        required={true}
-                    />
-                </label>
+                <span>
+                        <input
+                            id="terms_agreement"
+                            type="checkbox"
+                            name="terms_agreement"
+                            checked={formData.terms_agreement} 
+                            onChange={checkboxHandler}
+                            disabled={!termsRead}
+                            required={true}
+                        />
+                    <label>I have read and agree to the terms agreement</label>
+                </span>
 
                 {/* Only admin can check or uncheck whether or not this is paid */}
                 {loggedInUser && 
-                    <>
-                        <label>Mark as paid
+                    <span>
                             <input
                                 id="paid"
                                 type="checkbox"
@@ -126,8 +133,8 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                                 checked={formData.paid} 
                                 onChange={checkboxHandler}
                             />
-                        </label>
-                    </>
+                        <label>Mark as paid</label>
+                    </span>
                 }
 
                 <button type="submit">Submit</button>

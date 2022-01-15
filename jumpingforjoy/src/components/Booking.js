@@ -32,7 +32,7 @@ const Booking = () => {
     }
     
     return (
-        <div style={{minHeight: '100vh'}}>
+        <div style={{paddingBottom: '50px'}}>
             {booking.id && customer.id &&  castle.id &&
                 <div>
                     <Card>

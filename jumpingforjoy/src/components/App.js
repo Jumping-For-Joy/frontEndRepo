@@ -45,7 +45,8 @@ function App() {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    fontFamily: 'Open Sans, sans-serif',
   }
 
   return (

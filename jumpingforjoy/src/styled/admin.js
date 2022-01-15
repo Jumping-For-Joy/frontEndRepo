@@ -12,6 +12,7 @@ export const Container = styled.div`
         color: #707070;
     }
     width: 100%;
+    margin-bottom: 80px;
     margin: 0;
 
     // tablet

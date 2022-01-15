@@ -30,23 +30,19 @@ const Castle = () => {
     }
 
     return(
-
-        
         <Div>
             {castle.img_url && 
-                <div>
-                    <img src={castle.img_url} style={{width: "400px"}} alt={castle.name}/>
-                </div>
+                <img src={castle.img_url} style={{width: "400px"}} alt={castle.name}/>
             }
             <h3>{castle.name}</h3>
             <p>{castle.description}</p>
             <p>{castle.price}</p>
             {castle.available ? <p>Available now</p> : <p>Currently unavailable</p>}
             <section>
+            <Link to={`/castles/${castle.id}/enquiry`}>Make a Booking Request</Link>
             {loggedInUser &&
             <span>
                 <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
-                <Link to={`/castles/${castle.id}/enquiry`}>Make a Booking Request</Link>
                 <button onClick={handleDelete}>Delete this castle</button>
             </span>}
             </section>

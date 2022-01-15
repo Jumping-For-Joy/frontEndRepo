@@ -3,10 +3,12 @@ import {Link} from 'react-router-dom'
 
 export const Container = styled.div`
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding-bottom: 70px;
     a:visited {
         color: #707070;
     }
@@ -105,6 +107,7 @@ export const Card = styled.div`
     //mobile 
     
     width: 300px;
+    height: 400px;
     margin: 0 auto;
     margin-top: 40px;
     margin-bottom: 50px;
@@ -119,8 +122,11 @@ export const Card = styled.div`
     color: #707070;
     font-family: 'Open Sans', sans-serif;
 
+    // object-fit ensures different sized images all look the same size on the cards
     img {
-        width: 90%;
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
     }
 
     h3 {

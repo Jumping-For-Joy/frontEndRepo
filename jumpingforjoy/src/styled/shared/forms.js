@@ -66,31 +66,34 @@ export const Form = styled.div `
     }
 `
 
-// basic styling for the shared enquiry form
+// basic styling for the shared enquiry/customer form
 export const StyledForm = styled.form`
-    width: 350px;;
+    width: 350px;
+    color: #707070;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
-    label {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    // padding: 10px;
     button {
-        width: 40%;
         align-self: center;
     }
     input[type="datetime-local"] {
-        text-align: right;
-        width: 50%;
         font-family: 'Open Sans', sans-serif;
     }
-    a {
-        text-align: center;
-        color: #707070;
+    textarea {
+        height: 100px;
+    }
+    label {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between
+    }
+    span {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     // tablet and up

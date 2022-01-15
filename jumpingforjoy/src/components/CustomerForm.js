@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {createCustomer} from '../services/customerServices';
 import {useParams} from 'react-router-dom'
+import {StyledForm} from '../styled/shared/forms'
 
 const CustomerForm = ({ setCustomerId }) => {
     const {id} = useParams
@@ -28,7 +29,7 @@ const CustomerForm = ({ setCustomerId }) => {
     return (
         <div>
             <h3>Make a Booking Request</h3>
-            <form onSubmit={formSubmit}>
+            <StyledForm onSubmit={formSubmit}>
                 {/* // Customer profile
                 // name, email, phone_number, street_number, street_name, suburb, postcode, notes
                 // Enquiry form
@@ -106,7 +107,7 @@ const CustomerForm = ({ setCustomerId }) => {
                 />
 
                 <button type="submit">Submit booking request</button>
-            </form>
+            </StyledForm>
         </div>
     )
 }
