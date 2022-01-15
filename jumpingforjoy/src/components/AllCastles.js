@@ -10,14 +10,10 @@ const AllCastles =() => {
     return(
         <Container>
             <HeaderDiv>
-                <section>
-                    <h3>Jumping Castles</h3>
-                </section>
+                <h3>Jumping Castles</h3>
                 {loggedInUser && 
-                    <section>
-                        <StyledLink to={`/castles/new`}>Add New Castle</StyledLink>
-                    </section>
-                }
+                    <StyledLink to={`/castles/new`}>Add New Castle</StyledLink>
+                }    
             </HeaderDiv>
             {castles.map((castle, index) => {
                 return (

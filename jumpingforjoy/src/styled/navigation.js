@@ -12,14 +12,10 @@ export const Nav = styled.nav`
     height: 70px;
     border-radius: 20px;
 
-    div {
-        padding-right: 10px;
-        height: 90%;
-        
-        img {
-            height: 90%;
-            width: auto;
-        }
+    img {
+        height: calc(100% - 10px);
+        margin-left: auto;
+        padding: 10px;
     }
 
     // desktop

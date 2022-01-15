@@ -39,12 +39,13 @@ const Castle = () => {
             <p>{castle.price}</p>
             {castle.available ? <p>Available now</p> : <p>Currently unavailable</p>}
             <section>
-            <Link to={`/castles/${castle.id}/enquiry`}>Make a Booking Request</Link>
-            {loggedInUser &&
-            <span>
-                <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
-                <button onClick={handleDelete}>Delete this castle</button>
-            </span>}
+                <Link to={`/castles/${castle.id}/enquiry`}>Make a Booking Request</Link>
+                {loggedInUser &&
+                    <>
+                        <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
+                        <button onClick={handleDelete}>Delete this castle</button>
+                    </>
+                }
             </section>
         </Div>
     )

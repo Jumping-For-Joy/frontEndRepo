@@ -4,8 +4,6 @@ export const Form = styled.div `
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     padding-top: 30px;
-    margin-left: 600px;
-    margin-right: 400px;
     margin-top: 60px;
     margin-bottom: 50px;
     width: 500px;
