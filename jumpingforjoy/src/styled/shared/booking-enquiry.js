@@ -3,11 +3,10 @@ import {Link} from 'react-router-dom'
 
 export const Card = styled.div`
     text-align: center;
-    margin-top: 10%;
+    margin-top: 20px;
     background-color: #F8FEFE;
     padding: 30px;
     width: 300px;
-    border-radius: 20px;
     p, a, h3 {
         font-family: sans-serif;
         color: #707070;

@@ -14,7 +14,7 @@ const Navigation =() => {
                 <li><Link to="/castles" className="active">Jumping Castles</Link></li>
                 <li><Link to="/about" className="active">About</Link></li>
                 { /* "Hamburger menu" / "Bar icon" to toggle the navigation links */ }
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <a href="javascript:void(0);" className="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
             </UnorderedList>

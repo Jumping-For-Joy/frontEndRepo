@@ -3,6 +3,7 @@ import {useParams, Link} from 'react-router-dom'
 import {getCastle} from '../services/castleServices';
 import {getCustomer} from '../services/customerServices';
 import {getEnquiry} from '../services/enquiryServices'
+import {Card, StyledLink} from '../styled/shared/booking-enquiry'
 
 const Enquiry = () => {
     const [enquiry, setEnquiry] = useState({})
@@ -41,7 +42,7 @@ const Enquiry = () => {
     }
 
     return (
-        <div>
+        <Card>
             <h3>Booking request #{enquiry.id}</h3>
             <p>Name: {customer.name}</p>
             <p>Castle: {castle.name}</p>
@@ -50,13 +51,13 @@ const Enquiry = () => {
             <p>{enquiry.terms_agreement ? "✅ Agreed" : "⛔️ Has not yet agreed" } to terms.</p>
             <p>{enquiry.paid ? "✅ Paid" : "⛔️ Not yet paid" }.</p>
             {/* <Link to={`/enquiries/${enquiry.id}/manage`}>Manage enquiry</Link> */}
-            <Link
+            <StyledLink
                 to={`/enquiries/${enquiry.id}/manage`}
                 state={{ enquiry }}
                 >
                 Create booking
-            </Link>
-        </div>
+            </StyledLink>
+        </Card>
     )
 }
 

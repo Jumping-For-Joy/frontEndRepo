@@ -65,3 +65,36 @@ export const Form = styled.div `
         color: #707070;
     }
 `
+
+// basic styling for the shared enquiry form
+export const StyledForm = styled.form`
+    width: 350px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    label {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    button {
+        width: 40%;
+        align-self: center;
+    }
+    input[type="datetime-local"] {
+        text-align: right;
+        width: 50%;
+        font-family: 'Open Sans', sans-serif;
+    }
+    a {
+        text-align: center;
+        color: #707070;
+    }
+
+    // tablet and up
+    @media(min-width: 768px) {
+        width: 500px;
+    }
+`

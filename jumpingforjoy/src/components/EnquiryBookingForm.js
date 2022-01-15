@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../utils/stateContext'
 import {Link} from 'react-router-dom'
+import {StyledForm} from '../styled/shared/forms'
 
 // reusable form for creating and editing enquiries and bookings
 const EnquiryBookingForm = ({handleSubmit, existingData}) => {
@@ -55,7 +56,7 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
 
     return (
         <div>
-            <form onSubmit={(event) => { event.preventDefault(); handleSubmit(formData) }}>
+            <StyledForm onSubmit={(event) => { event.preventDefault(); handleSubmit(formData) }}>
                 <label>Booking Start Time
                     <input
                         type="datetime-local"
@@ -129,8 +130,8 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                     </>
                 }
 
-                <button type="submit">Submit booking request</button>
-            </form>
+                <button type="submit">Submit</button>
+            </StyledForm>
         </div>
     )
 }
