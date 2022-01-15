@@ -10,7 +10,7 @@ const AllCastles =() => {
     return(
         <Container>
             <HeaderDiv>
-                <h3>Jumping Castles</h3>
+                <h3>Jumping Castles For Hire</h3>
                 {loggedInUser && 
                     <StyledLink to={`/castles/new`}>Add New Castle</StyledLink>
                 }    

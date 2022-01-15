@@ -58,7 +58,7 @@ function App() {
                 <Route path="/about" element={<About />}/>
 
                 {/* castle routes */}
-                <Route path="/castles" element={<AllCastles />}/>
+                <Route path="/" element={<AllCastles />}/>
                 <Route path="castles/new" element={<AddCastle />}/>
                 <Route path="/castles/:id" element={<Castle />}/>
                 <Route path="/castles/:id/update" element={<EditCastle />}/>
@@ -77,7 +77,7 @@ function App() {
               <Route path="/signup" element={<SignUp />}/>
               <Route path="/signin" element={<SignIn />}/>
 
-              <Route path="/" element={<Home />}/>
+              {/* <Route path="/" element={<Home />}/> */}
             </Routes>
             <Footer />
           </Router>
