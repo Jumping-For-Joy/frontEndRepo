@@ -31,7 +31,7 @@ const Booking = () => {
 
     // so the date is output in an easy to read way
     function formatDateForUser(date) {
-        let readableDate = new Date(date).toLocaleString()
+        let readableDate = new Date(date).toISOString()
         return readableDate
     }
     
@@ -46,7 +46,7 @@ const Booking = () => {
                         <p>{customer.street_number} {customer.street_name}
                             <br></br>
                         {customer.suburb} {customer.postcode}</p>
-                        <p>{formatDateForUser(booking.start_time)}</p>
+                        <p>{booking.start_time}</p>
                         <p>Hire period: {booking.duration} hours</p>
                         <p><Link to={`/castles/${castle.id}`}>{castle.name}</Link></p>
                         <p>{booking.terms_agreement ? "Agreed" : "Has not yet agreed" } to terms.</p>
