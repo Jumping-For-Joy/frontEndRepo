@@ -6,6 +6,7 @@ import {getCustomer} from '../services/customerServices';
 import { Card, StyledLink } from '../styled/shared/booking-enquiry'
 import { Div } from '../styled/booking'
 import Loading from './Loading'
+import moment from 'moment'
 
 const Booking = () => {
     const [booking, setBooking] = useState({})
@@ -31,7 +32,7 @@ const Booking = () => {
 
     // so the date is output in an easy to read way
     function formatDateForUser(date) {
-        let readableDate = new Date(date).toISOString()
+        let readableDate = new Date(date)
         return readableDate
     }
     
@@ -46,7 +47,7 @@ const Booking = () => {
                         <p>{customer.street_number} {customer.street_name}
                             <br></br>
                         {customer.suburb} {customer.postcode}</p>
-                        <p>{booking.start_time}</p>
+                        <p>{moment.parseZone(booking.start_time).format('MMM Do YYYY, h:mm a')}</p>
                         <p>Hire period: {booking.duration} hours</p>
                         <p><Link to={`/castles/${castle.id}`}>{castle.name}</Link></p>
                         <p>{booking.terms_agreement ? "Agreed" : "Has not yet agreed" } to terms.</p>
