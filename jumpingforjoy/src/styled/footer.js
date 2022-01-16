@@ -23,8 +23,16 @@ export const StyledFooter = styled.div`
         color: #707070;
         padding: 10px;
     }
+
+    a:hover {
+         color: #8AD7DB;
+    }
     // desktop
     @media(min-width: 1200px) {
         width: 97%;
+    }
+    
+    a:hover {
+        color: #8AD7DB;
     }
 `

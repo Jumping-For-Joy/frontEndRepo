@@ -13,7 +13,7 @@ export const Div = styled.div`
     margin-bottom: 80px;
     margin-top: 20px;
     font-family: 'Open Sans', sans-serif;
-    border: solid 1px red;
+    
     color: #707070;
 
     h3 {
@@ -23,6 +23,7 @@ export const Div = styled.div`
     p {
         font-size: 15px;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     img {
@@ -35,20 +36,32 @@ export const Div = styled.div`
 
     button {
         color: #707070;
+        font-size: 15px;
         background: #8AD7DB;
         border-radius: 20px;
         text-decoration: none;
         border: none;
         padding: 10px;
-        display: inline;
-        align-items: center;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
     }
 
     a {
-        text-decoration: none;
+        font-size: 15px;
         color: #707070;
+        background: #8AD7DB;
+        border-radius: 20px;
+        text-decoration: none;
         border: none;
         padding: 10px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
 
     a:hover {
