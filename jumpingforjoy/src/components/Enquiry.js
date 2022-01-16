@@ -31,10 +31,6 @@ const Enquiry = () => {
             setLoading(false)
         })
         .catch((error) => console.log('enquiry retrieval error:', error))
-        // .finally(() => setEnquiry({
-        //     ...enquiry,
-        //     start_time: formatDateForForm(enquiry.start_time)
-        // }))
     }, [id])
 
     // so the date is output in an easy to read way
@@ -61,7 +57,6 @@ const Enquiry = () => {
                 <p>Duration: {enquiry.duration} hours</p>
                 <p>{enquiry.terms_agreement ? "✅ Agreed" : "⛔️ Has not yet agreed" } to terms.</p>
                 <p>{enquiry.paid ? "✅ Paid" : "⛔️ Not yet paid" }.</p>
-                {/* <Link to={`/enquiries/${enquiry.id}/manage`}>Manage enquiry</Link> */}
                 <StyledLink
                     to={`/enquiries/${enquiry.id}/manage`}
                     state={{ enquiry }}

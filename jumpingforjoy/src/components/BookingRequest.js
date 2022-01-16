@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import EnquiryForm from './EnquiryForm'
 import CustomerForm from './CustomerForm'
 import {useParams} from 'react-router-dom'

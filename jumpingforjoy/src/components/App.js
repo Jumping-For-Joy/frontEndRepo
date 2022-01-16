@@ -1,10 +1,7 @@
-
 import React, { useReducer, useEffect } from 'react'
-import { getCastles } from '../services/castleServices'
 import stateReducer from '../utils/stateReducer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Navigation';
-import Home from './Home';
 import About from './About';
 import AllCastles from './AllCastles';
 import Castle from './Castle';
@@ -19,19 +16,18 @@ import BookingRequest from './BookingRequest'
 import BookingForm from './BookingForm'
 import Booking from './Booking'
 import EditBooking from './EditBooking'
+import CustomerConfirmation from './CustomerConfirmation'
 import { StateContext } from '../utils/stateContext';
 
 
 function App() {
   const initialState = {
-    // castles: [],
     loggedInUser: sessionStorage.getItem("user") || null,
     auth: {token: sessionStorage.getItem("token") || null}
   }
 
   const [store, dispatch] = useReducer(stateReducer,initialState)
   
-
   const containerStyles = {
     display: 'flex',
     flexDirection: 'column',
@@ -57,21 +53,22 @@ function App() {
                 <Route path="/castles/:id" element={<Castle />}/>
                 <Route path="/castles/:id/update" element={<EditCastle />}/>
 
-              {/* enquiry routes */}
-              <Route path="/castles/:id/enquiry" element={<BookingRequest />}/>
+                {/* enquiry routes */}
+                <Route path="/castles/:id/enquiry" element={<BookingRequest />}/>
+                <Route path="/confirmation" element={<CustomerConfirmation />}/>
 
-              {/* admin routes */}
-              <Route path="/admin" element={<AdminDashboard />} />
-              <Route path="/enquiries/:id" element={<Enquiry />}/>
-              <Route path="/enquiries/:id/manage" element={<BookingForm />}/>
-              <Route path="/bookings/:id" element={<Booking />} />
-              <Route path="/bookings/:id/manage" element={<EditBooking />} />
+                {/* admin routes */}
+                <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/enquiries/:id" element={<Enquiry />}/>
+                <Route path="/enquiries/:id/manage" element={<BookingForm />}/>
+                <Route path="/bookings/:id" element={<Booking />} />
+                <Route path="/bookings/:id/manage" element={<EditBooking />} />
 
-              {/* auth routes */}
-              <Route path="/signup" element={<SignUp />}/>
-              <Route path="/signin" element={<SignIn />}/>
+                {/* auth routes */}
+                <Route path="/signup" element={<SignUp />}/>
+                <Route path="/signin" element={<SignIn />}/>
 
-              {/* <Route path="/" element={<Home />}/> */}
+                {/* <Route path="/" element={<Home />}/> */}
             </Routes>
             <Footer />
           </Router>

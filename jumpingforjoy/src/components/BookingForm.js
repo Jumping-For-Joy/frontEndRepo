@@ -29,9 +29,8 @@ const BookingForm = () => {
             castle_id: enquiry.castle_id,
             enquiry_id: enquiry.id
         })
-        .then((response) => console.log(response))
+        .then((response) => navigate(`/bookings/${response.id}`))
         .catch((error) => console.log(error))
-        .finally((response) => navigate(`/bookings/${response.id}`))
     }
 
     return (

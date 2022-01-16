@@ -106,7 +106,7 @@ const CustomerForm = ({ setCustomerId }) => {
                     onChange={changeHandler}
                 />
 
-                <button type="submit">Submit booking request</button>
+                <button type="submit">Continue to event details</button>
             </StyledForm>
         </div>
     )
