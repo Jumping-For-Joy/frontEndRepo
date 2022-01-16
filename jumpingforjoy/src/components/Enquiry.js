@@ -3,9 +3,9 @@ import { useParams, Link } from 'react-router-dom'
 import { getCastle } from '../services/castleServices';
 import { getCustomer } from '../services/customerServices';
 import { getEnquiry } from '../services/enquiryServices'
-import { StyledLink} from '../styled/shared/booking-enquiry'
-import { Form } from '../styled/shared/forms'
+import { Card, StyledLink } from '../styled/shared/booking-enquiry'
 import Loading from './Loading'
+import moment from 'moment'
 
 const Enquiry = () => {
     const [enquiry, setEnquiry] = useState({})
@@ -33,11 +33,6 @@ const Enquiry = () => {
         .catch((error) => console.log('enquiry retrieval error:', error))
     }, [id])
 
-    // so the date is output in an easy to read way
-    function formatDateForUser(date) {
-        let readableDate = new Date(date).toLocaleString('en-GB', {hour12: true})
-        return readableDate
-    }
 
     // not able to pre-fill the form with exisiting enquiry data without handling here first
     function formatDateForForm(date) {
@@ -46,26 +41,29 @@ const Enquiry = () => {
     }
 
     return (
-        <Form> {/*Card*/}
+        <Card> {/*Card*/}
         { loading ?
         <Loading /> :
             <>
-                <h3>Booking request #{enquiry.id}</h3>
-                <p>Name: {customer.name}</p>
-                <p>Castle: {castle.name}</p>
-                <p>Booking start: {formatDateForUser(enquiry.start_time)}</p>
-                <p>Duration: {enquiry.duration} hours</p>
-                <p>{enquiry.terms_agreement ? "✅ Agreed" : "⛔️ Has not yet agreed" } to terms.</p>
-                <p>{enquiry.paid ? "✅ Paid" : "⛔️ Not yet paid" }.</p>
-                <StyledLink
-                    to={`/enquiries/${enquiry.id}/manage`}
-                    state={{ enquiry }}
-                    >
-                    Create booking
-                </StyledLink>
-            </>
+                <h3>Enquiry #{enquiry.id}</h3>
+                    <p>{customer.name}</p>
+                    <p>{customer.street_number} {customer.street_name}
+                        <br></br>
+                    {customer.suburb} {customer.postcode}</p>
+                    <p>{moment.parseZone(enquiry.start_time).format('MMM Do YYYY, h:mm a')}</p>
+                    <p>Hire period: {enquiry.duration} hours</p>
+                    <p><Link to={`/castles/${castle.id}`}>{castle.name}</Link></p>
+                    <p>{enquiry.terms_agreement ? "Agreed" : "Has not yet agreed" } to terms.</p>
+                    <p>Notes: {enquiry.notes ? enquiry.notes : "No notes on this enquiry."}</p>
+                    <StyledLink
+                        to={`/enquiries/${enquiry.id}/manage`}
+                        state={{ enquiry }}
+                        >
+                        Create booking
+                    </StyledLink>
+                </>
         }
-        </Form>
+        </Card>
     )
 }
 
