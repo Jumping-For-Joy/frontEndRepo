@@ -1,21 +1,12 @@
 import React, { useState } from 'react';
-import { Form } from '../styled/shared/forms'
+import { Container } from '../styled/editcastle'
+import { StyledForm } from '../styled/shared/forms'
 
 const CastleForm = ({castle, formSubmit}) => {
-    // const initialState = {
-    //     name: undefined,
-    //     description: undefined,
-    //     img_url: undefined,
-    //     price: undefined,
-    //     available: undefined
-    // }
-
     const [formData, setFormData] = useState({
         ...castle,
         available: castle.available ?? true // nullish coalesce - if null or undefined it will set to true
     })
-    console.log('initial castle data >', castle)
-    console.log('initial form data >', formData)
     const [image, setImage] = useState(undefined)
 
     // // reassign the state to the current form values being entered
@@ -48,7 +39,6 @@ const CastleForm = ({castle, formSubmit}) => {
         console.log('files -> ' , image)
 
         // this is where we handle image uploading before posting changes to the castle
-        // setFormData({...formData, heroImgUrl: [event.target.files][0]})
         fetch("https://api.cloudinary.com/v1_1/adriana-developer/image/upload", 
             {
                 method: "post",
@@ -64,17 +54,16 @@ const CastleForm = ({castle, formSubmit}) => {
         .catch(error => console.log(error))  
     }    
 
-    console.log('formData -> ', formData)
-
     return (
-        <Form>
-            <form onSubmit={(event) => { event.preventDefault(); formSubmit(formData) }}>
+        <div>
+            <StyledForm onSubmit={(event) => { event.preventDefault(); formSubmit(formData) }}>
                 <label>Name</label>
                 <input 
                     type="text"
                     name="name"
                     value={formData.name}
-                    onChange={changeHandler} 
+                    onChange={changeHandler}
+                    required={true} 
                 />
 
                 <label>Price</label>
@@ -86,21 +75,23 @@ const CastleForm = ({castle, formSubmit}) => {
                     />
 
                 <label>Description</label>
-                <input 
-                    type="text"
+                <textarea 
                     name="description"
                     value={formData.description}
                     onChange={changeHandler} 
-                />
+                >{formData.description}
+                </textarea>
 
-                <label for="available">Mark as available:</label>
-                <input
-                    id="available"
-                    type="checkbox"
-                    name="available"
-                    checked={formData.available} 
-                    onChange={checkboxHandler}
-                />
+                <span>
+                    <input
+                        id="available"
+                        type="checkbox"
+                        name="available"
+                        checked={formData.available} 
+                        onChange={checkboxHandler}
+                    />
+                    <label htmlFor="available">Mark as available</label>
+                </span>
 
                 <label>Add image</label>
                 <input 
@@ -108,12 +99,13 @@ const CastleForm = ({castle, formSubmit}) => {
                     name="castleImages"
                     onChange={attachImage}
                 />
-
-                <button onClick={fileUpload}>Upload image</button>
+                <span>
+                    <button onClick={fileUpload}>Upload image</button>
+                </span>
                 <img src={formData.img_url} style={{width: "300px"}} alt="jumping castle" />
-                <span><button type="submit">Save changes</button></span>
-            </form>
-        </Form>
+                <button type="submit">Save changes</button>
+            </StyledForm>
+        </div>
     )
 }
 

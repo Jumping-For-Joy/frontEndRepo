@@ -1,7 +1,7 @@
 import React from 'react';
 import "@testing-library/jest-dom";
 import AllBookings from "../components/AllBookings";
-import { render, screen, fireEvent, waitFor } from "./test-utils";
+import { render, screen, waitFor } from "./test-utils";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 

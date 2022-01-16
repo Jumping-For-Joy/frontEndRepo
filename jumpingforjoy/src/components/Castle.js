@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import {useParams, Link} from 'react-router-dom'
-import {getCastle, deleteCastle} from '../services/castleServices'
-import {useGlobalState} from '../utils/stateContext'
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom'
+import { getCastle, deleteCastle } from '../services/castleServices'
+import { useGlobalState } from '../utils/stateContext'
 import { Div } from '../styled/castle'
+import Loading from './Loading'
 
 
 const Castle = () => {
@@ -12,10 +13,14 @@ const Castle = () => {
     // this is where we use global state to set logged in user
     const {store} = useGlobalState()
     const {loggedInUser} = store
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getCastle(id)
-        .then((castle) => setCastle(castle))
+        .then((castle) => {
+            setCastle(castle)
+            setLoading(false)
+        })
         .catch((error) => console.log(error))
     }, [id])
 
@@ -30,24 +35,31 @@ const Castle = () => {
     }
 
     return(
-        <Div>
-            {castle.img_url && 
-                <img src={castle.img_url} style={{width: "400px"}} alt={castle.name}/>
-            }
-            <h3>{castle.name}</h3>
-            <p>{castle.description}</p>
-            <p>{castle.price}</p>
-            {castle.available ? <p>Available now</p> : <p>Currently unavailable</p>}
-            <section>
-                <Link to={`/castles/${castle.id}/enquiry`}>Make a Booking Request</Link>
-                {loggedInUser &&
-                    <>
-                        <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
-                        <button onClick={handleDelete}>Delete this castle</button>
-                    </>
+        <>
+        {loading ?
+            <Loading /> :
+            <Div>
+                <h3>{castle.name}</h3>
+                {castle.img_url && 
+                    <img src={castle.img_url} style={{width: "400px"}} alt={castle.name}/>
                 }
-            </section>
-        </Div>
+                <div>
+                    <p>{castle.description}</p>
+                    {castle.price && <p>$ {castle.price}</p>}
+                    <section>
+                        <Link to={`/castles/${castle.id}/enquiry`}>Make a Booking Request</Link>
+                        {loggedInUser &&
+                            <>
+                                {castle.available ? <p>Available now</p> : <p>Currently unavailable</p>}
+                                <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
+                                <button onClick={handleDelete}>Delete this castle</button>
+                            </>
+                        }
+                    </section>
+                </div>
+            </Div>
+        }
+        </>
     )
 }
 
