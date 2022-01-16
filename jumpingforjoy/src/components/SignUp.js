@@ -75,6 +75,8 @@ const SignUp = () => {
                     <br></br>
                     <section>
                     <button type="submit">Create account</button>
+                    </section>
+                    <section>
                     {loggedInUser && <p>Success!</p>}
                     </section>
                 </form>

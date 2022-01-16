@@ -2,7 +2,7 @@ import React from 'react';
 import {useGlobalState} from '../utils/stateContext'
 import { createCastle } from '../services/castleServices'
 import CastleForm from './CastleForm'
-import { Container } from '../styled/editcastle'
+import { StyledForm } from '../styled/shared/forms'
 import { useNavigate } from 'react-router-dom';
 
 const AddCastle = () => {
@@ -19,11 +19,11 @@ const AddCastle = () => {
     }    
 
     return (
-        <Container>
+        <StyledForm>
             {loggedInUser && 
                 <CastleForm formSubmit={formSubmit} castle={{}} />
             }
-        </Container>
+        </StyledForm>
     )
 }
 

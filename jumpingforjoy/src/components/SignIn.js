@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { signIn } from '../services/authServices';
 import { useGlobalState } from '../utils/stateContext'
-import { Form } from '../styled/shared/forms'
+import { StyledForm } from '../styled/shared/forms'
+
 
 const SignIn = () => {
     const navigate = useNavigate()
@@ -37,7 +38,7 @@ const SignIn = () => {
     }
 
     return(
-        <Form>
+        <StyledForm>
             <div>
                 <h3>Sign in</h3>
                 {showError && <p style={{ color: 'red', textAlign: 'center' }}>Login unsuccessful</p>}
@@ -70,7 +71,7 @@ const SignIn = () => {
                     </section>
                 </form>
             </div>
-        </Form>
+        </StyledForm>
     )
 }
 

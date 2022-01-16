@@ -3,7 +3,7 @@ import {useNavigate, useParams} from 'react-router-dom'
 import {getCastle, updateCastle} from '../services/castleServices'
 import {useGlobalState} from '../utils/stateContext'
 import CastleForm from './CastleForm'
-import { Container } from '../styled/editcastle'
+import { StyledForm } from '../styled/shared/forms'
 
 const EditCastle = () => {
     const [formData, setFormData] = useState({})
@@ -27,14 +27,14 @@ const EditCastle = () => {
     }
 
     return(
-        <Container>
+        <StyledForm>
             {/* not rendering the form until we have the data */}            
             {loggedInUser && formData.id &&  
                 <div>
                     <h3>Edit Castle</h3>
                     <CastleForm formSubmit={formSubmit} castle={formData} />
                 </div>}
-        </Container>
+        </StyledForm>
     )
 }
 

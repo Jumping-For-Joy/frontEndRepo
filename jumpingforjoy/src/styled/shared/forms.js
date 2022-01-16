@@ -73,13 +73,38 @@ export const StyledForm = styled.form`
     flex-direction: column;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
+    width: 80%;
     text-align: center;
 
-    div {
+    img {
+        display: none;
+    }
+    
+    div { 
+        
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background: #F8FEFE;
         margin-top: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+
+        
+    }
+    // larger screens
+    @media(min-width: 768px) {
+        width: 700px;
     }
 
+    a {
+        color: #8AD7DB;
+    }
+
+    a:visited {
+        color: #707070
+    }
     button {
         color: #707070;
         font-size: 15px;
@@ -90,6 +115,8 @@ export const StyledForm = styled.form`
         align-self: center;
         margin-top: 10px;
         margin-bottom: 10px;
+        padding: 10px;
+
     }
 
     button:hover {
@@ -130,6 +157,15 @@ export const StyledForm = styled.form`
 
     // tablet and up
     @media(min-width: 768px) {
-        width: 500px;
+        
+        div {
+
+            width: 900px;
+        }
+
+        img {
+            display: inline;
+            width: 100%;
+        }
     }
 `
