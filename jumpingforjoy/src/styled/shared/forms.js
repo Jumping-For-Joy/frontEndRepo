@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Form = styled.div `
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -66,31 +67,51 @@ export const Form = styled.div `
 
 // basic styling for the castle form
 export const StyledForm = styled.form`
-    width: 350px;
+    width: 300px;
     color: #707070;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
-    // padding: 10px;
+    text-align: center;
+
+    div {
+        background: #F8FEFE;
+        margin-top: 20px;
+    }
+
     button {
+        color: #707070;
+        font-size: 15px;
+        background: #8AD7DB;
+        border-radius: 20px;
+        text-decoration: none;
+        border: none;
         align-self: center;
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
+    button:hover {
+        color: #F8FEFE;
+    }
+
     input[type="datetime-local"] {
         font-family: 'Open Sans', sans-serif;
     }
+
     input[type="checkbox"] {
         accent-color: #D9F7FD;
         color: #707070;
     }
+
     textarea {
         height: 100px;
         font-family: 'Open Sans', sans-serif;
         line-height: 110%;
         padding: 5px;
     }
+    
     label {
         padding-top: 10px;
         padding-bottom: 10px;

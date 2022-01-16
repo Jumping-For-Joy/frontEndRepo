@@ -57,7 +57,6 @@ export const HeaderDiv = styled.div`
 
     h3 {
         margin-top: 20px;
-        margin-bottom: 20px;
         padding-top: 20px;
         font-size: 20px;
         text-align: center;
@@ -72,9 +71,9 @@ export const HeaderDiv = styled.div`
     @media(min-width: 1200px) {
 
         h3 {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding-top: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-top: 10px;
             font-size: 30px;
             text-align: center;
             font-family: 'Open Sans', sans-serif;
@@ -106,8 +105,7 @@ export const Card = styled.div`
     
     width: 300px;
     height: 400px;
-    margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 50px;
     display: flex;
     flex-direction: column;
