@@ -1,133 +1,98 @@
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
+// entire page container
 export const Container = styled.div`
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 70px;
     a:visited {
         color: #707070;
     }
-
+    h3 {
+        font-size: 20px;
+        color: #707070;
+        margin: 20px;
+    }
+    
     // tablet
     @media(min-width: 768px) {
         width: 800px;
         margin: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-center;
     }
     // desktop
     @media(min-width: 1200px) {
-        width: 1000px;
+        gap: 20px;
+        width: 1100px;
+        h3 {
+            font-size: 30px;
+         }
     }
+
+`
+// container for the cards only
+export const CardsDiv = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
 `
 
-// container that holds heading text and link
-export const HeaderDiv = styled.div`
-    display: flex;
+// container that holds link to add new button below cards
+export const StyledDiv = styled.div`
     text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+    padding: 15px;
     width: 100%;
 
+    // add new castle button at bottom of page
     a {
         text-decoration: none;
-        padding: 15px;
-        font-family: 'Open Sans', sans-serif;
+        padding: 12px;
         font-size: 15px;
         background: #8AD7DB;
         border-radius: 20px;
         text-decoration: none;
-        border: none;
         display: inline;
-        align-items: center;
     }
 
     a:hover {
         text-decoration: none;
         color: #F8FEFE;
     }
-
-    h3 {
-        margin-top: 20px;
-        padding-top: 20px;
-        font-size: 20px;
-        text-align: center;
-        font-family: 'Open Sans', sans-serif;
-        text-decoration: none; 
-        color: #707070;
-     }
-
-
-     // desktop
-
-    @media(min-width: 1200px) {
-
-        h3 {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding-top: 10px;
-            font-size: 30px;
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-            text-decoration: none; 
-            color: #707070;
-         }
-
-         a {
-            text-decoration: none;
-            border: solid 1px grey;
-            padding: 15px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 15px;
-            background: #8AD7DB;
-            border-radius: 20px;
-            text-decoration: none;
-            border: none;
-            margin-bottom: 15px;
-            display: inline;
-            align-items: center;
-        }
+    @media(min-width: 768px) {
+        text-align: right;
     }
-    
 `
 
 export const Card = styled.div`
     
-    //mobile 
+    // mobile 
     
     width: 300px;
     height: 400px;
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     background-color: #F8FEFE;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     color: #707070;
-    font-family: 'Open Sans', sans-serif;
+    a {
+        text-decoration: none;
+        color: #8AD7DB;
+    }
+    a:hover {
+        color: #8AD7DB;
+    }
 
-    // object-fit ensures different sized images all look the same size on the cards
     img {
         width: 250px;
         height: 250px;
         object-fit: cover;
-    }
-
-    h3 {
-        color: #707070;
-        font-family: 'Open Sans', sans-serif;
     }
 
     // tablet
@@ -144,19 +109,6 @@ export const Card = styled.div`
     }
 `
 
-export const StyledLink = styled(Link)`
-    text-align: center;
-    text-decoration: none;
+export const Header4 = styled.h4`
     font-size: 20px;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    color: #707070;
-
-    // desktop
-    @media(min-width: 1200px) {
-        h3 {
-            font-size: 20px;
-        }
-    }
 `
