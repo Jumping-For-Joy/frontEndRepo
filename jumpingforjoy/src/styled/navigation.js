@@ -2,14 +2,15 @@ import styled from 'styled-components'
 
 export const Nav = styled.nav`
     // mobile 
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #F8FEFE;
     height: 70px;
-    width: calc(100% - 40px);
+    width: calc(100% - 10px);
     border-radius: 20px;
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
 
     img {
         height: calc(100% - 10px);
@@ -18,65 +19,39 @@ export const Nav = styled.nav`
     }
 
     // desktop
-
     @media(min-width: 1200px) {
-        display: flex;
-        justify-content: left;
-        flex-direction: space-between;
-        background: #F8FEFE;
         height: 50px;
-        margin: 20px 20px 0;
+        margin: 20px;
         border-radius: 20px;
     }
 `
 
 export const UnorderedList = styled.ul`
     // mobile 
-
     list-style-type: none;
-    margin: 3px;
-
-    li a {
-        display: flex; 
-        flex-direction: inline-block;
-        padding-top: 6px;
-        font-size: 10px;
-        color: #707070;
-        font-family: 'Open Sans', sans-serif;
-        text-decoration: none;
-
+    margin: 0;
+    padding: 0;
+    li {
+        display: inline;
+        padding: 5px;
     }
-
+    li a {
+        color: #707070;
+        text-decoration: none;
+        transition: transform 0.3s;
+    }
     li a:hover {
         transform: scale(1.1);
         color: #8AD7DB;
     }
 
-    // desktop
-
-    @media(min-width: 1200px) {
-        list-style-type: none;
-        margin: 4px;
-        padding: 4px;
-
+    //tablet and up
+    @media(min-width: 768px) {
         li {
-            float: left;
-            padding: 7px;
+            padding-left: 15px;
         }
-
         li a {
-            display: block;
-            text-decoration: none;
-            color: #707070;
-            font-size: 20px;
-            justify-content: center;
-            font-family: 'Open Sans', sans-serif;
-            text-decoration: none;
-        }
-
-        li a:hover {
-            transform: scale(1.1);
-            color: #8AD7DB;
+            font-size: 18px;
         }
     }
 `
