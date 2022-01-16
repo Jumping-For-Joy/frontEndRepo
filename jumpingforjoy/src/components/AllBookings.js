@@ -2,35 +2,38 @@ import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import {getBookings} from '../services/bookingServices'
 import {Card} from '../styled/admin'
+import Loading from './Loading'
 
 const AllBookings = () => {
     const [bookings, setBookings] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getBookings()
-        .then((response) => setBookings([...bookings, ...response]))
+        .then((response) => {
+            setBookings([...bookings, ...response])
+            setLoading(false)
+        })
         .then(() => console.log('bookings', bookings))
         .catch((error) => console.log(error))
     },[])
  
     return (
         <div>
-            {bookings.map((booking, index) => {
-                return (
-                    <Card key={booking.id}>
-                        <Link key={booking.id} to={`/bookings/${booking.id}`}>
-                            <h3>Booking #{booking.id}</h3>
-                        </Link>
-                            {/* <p>Paid: {booking.paid}</p>
-                            <p>Start: {booking.start_time}</p>
-                            <p>Duration: {booking.duration}</p>
-                            <p>Terms agreement:{booking.terms_agreement}</p>
-                            <p>Castle: {booking.castle_id}</p>
-                            <p>Notes: {booking.notes}</p>
-                            <p>Total: {booking.total}</p> */}
-                    </Card>
-                )
-            })}
+            { loading ? 
+            <Loading /> :
+            <>
+                {bookings.map((booking, index) => {
+                    return (
+                        <Card key={booking.id}>
+                            <Link key={booking.id} to={`/bookings/${booking.id}`}>
+                                <h3>Booking #{booking.id}</h3>
+                            </Link>
+                        </Card>
+                    )
+                })}
+            </>
+            }
 
 
         </div>

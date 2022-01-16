@@ -5,11 +5,13 @@ import {getCastle} from '../services/castleServices';
 import {getCustomer} from '../services/customerServices';
 import { Card, StyledLink } from '../styled/shared/booking-enquiry'
 import { Div } from '../styled/booking'
+import Loading from './Loading'
 
 const Booking = () => {
     const [booking, setBooking] = useState({})
     const [customer, setCustomer] = useState({})
     const [castle, setCastle] = useState({})
+    const [loading, setLoading] = useState(true)
     const {id} = useParams()
 
     useEffect(() => {
@@ -22,6 +24,7 @@ const Booking = () => {
             getCastle(booking.castle_id)
             .then((castle) => setCastle(castle))
             .catch((error) => console.log('castle retrieval error:', error))
+            setLoading(false)
         })
         .catch((error) => console.log('booking retrieval error:', error))
     }, [id])
@@ -34,12 +37,12 @@ const Booking = () => {
     
     return (
         <Div>
-            {booking.id && customer.id &&  castle.id &&
+            { loading ? 
+                <Loading /> :
                 <div>
                     <Card>
                     <h3>Confirmed Booking #{booking.id}</h3>
                         <p>{customer.name}</p>
-                        {/* <p>Booking delivery address:</p> */}
                         <p>{customer.street_number} {customer.street_name}
                             <br></br>
                         {customer.suburb} {customer.postcode}</p>
@@ -49,7 +52,6 @@ const Booking = () => {
                         <p>{booking.terms_agreement ? "Agreed" : "Has not yet agreed" } to terms.</p>
                         <p>{booking.paid ? "Deposit paid" : "Not yet paid" }.</p>
                         <p>Notes: {booking.notes ? booking.notes : "No notes on this booking."}</p>
-                        {/* <Link to={`/bookings/${booking.id}/manage`}>Manage booking</Link> */}
                         <StyledLink
                             to={`/bookings/${booking.id}/manage`}
                             state={{ booking }}
@@ -57,7 +59,7 @@ const Booking = () => {
                             Manage booking
                         </StyledLink>
                     </Card>
-                </div>
+                </div>          
             }
         </Div>
     )

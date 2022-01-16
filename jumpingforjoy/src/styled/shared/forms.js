@@ -64,7 +64,7 @@ export const Form = styled.div `
     }
 `
 
-// basic styling for the shared enquiry/customer form
+// basic styling for the castle form
 export const StyledForm = styled.form`
     width: 350px;
     color: #707070;
@@ -75,23 +75,36 @@ export const StyledForm = styled.form`
     // padding: 10px;
     button {
         align-self: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     input[type="datetime-local"] {
         font-family: 'Open Sans', sans-serif;
     }
+    input[type="checkbox"] {
+        accent-color: #D9F7FD;
+        color: #707070;
+    }
     textarea {
         height: 100px;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 110%;
+        padding: 5px;
     }
     label {
         padding-top: 10px;
         padding-bottom: 10px;
         display: flex;
-        justify-content: space-between
+        justify-content: space-between;
+        font-size: 14px;
     }
+
     span {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        // margin-top: 10px;
+        // margin-bottom: 10px;
     }
 
     // tablet and up

@@ -12,23 +12,16 @@ export const Div = styled.div`
     justify-content: center;
     margin-bottom: 80px;
     margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+    border: solid 1px red;
+    color: #707070;
 
     h3 {
-        margin-top: 20px;
-        padding-top: 20px;
         font-size: 20px;
-        text-align: center;
-        font-family: 'Open Sans', sans-serif;
-        text-decoration: none; 
-        color: #707070;
     }
 
     p {
         font-size: 15px;
-        text-align: center;
-        font-family: 'Open Sans', sans-serif;
-        text-decoration: none; 
-        color: #707070;
         margin-bottom: 10px;
     }
 
@@ -67,11 +60,6 @@ export const Div = styled.div`
         text-decoration: none;
         color: #F8FEFE;
         cursor: pointer;
-    }
-
-    section {
-        justify-content: center;
-        display: flex;
     }
 
     // tablet and up

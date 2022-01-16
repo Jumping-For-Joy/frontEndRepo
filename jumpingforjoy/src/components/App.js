@@ -24,19 +24,13 @@ import { StateContext } from '../utils/stateContext';
 
 function App() {
   const initialState = {
-    castles: [],
+    // castles: [],
     loggedInUser: sessionStorage.getItem("user") || null,
     auth: {token: sessionStorage.getItem("token") || null}
   }
 
   const [store, dispatch] = useReducer(stateReducer,initialState)
   
-  // Load all of our castles from the database
-  useEffect(() => {
-    getCastles()
-    .then((castles) => dispatch({type: 'setCastles', data: castles}))
-    .catch((error) => console.log(error))
-  }, [])
 
   const containerStyles = {
     display: 'flex',

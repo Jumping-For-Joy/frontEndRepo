@@ -5,11 +5,13 @@ import { getCustomer } from '../services/customerServices';
 import { getEnquiry } from '../services/enquiryServices'
 import { StyledLink} from '../styled/shared/booking-enquiry'
 import { Form } from '../styled/shared/forms'
+import Loading from './Loading'
 
 const Enquiry = () => {
     const [enquiry, setEnquiry] = useState({})
     const [customer, setCustomer] = useState({})
     const [castle, setCastle] = useState({})
+    const [loading, setLoading] = useState(true)
     const {id} = useParams()
 
     useEffect(() => {
@@ -22,12 +24,17 @@ const Enquiry = () => {
             getCastle(enquiry.castle_id)
             .then((castle) => setCastle(castle))
             .catch((error) => console.log('castle retrieval error:', error))
+            setEnquiry({
+                ...enquiry,
+                start_time: formatDateForForm(enquiry.start_time) 
+            })
+            setLoading(false)
         })
         .catch((error) => console.log('enquiry retrieval error:', error))
-        .finally(() => setEnquiry({
-            ...enquiry,
-            start_time: formatDateForForm(enquiry.start_time)
-        }))
+        // .finally(() => setEnquiry({
+        //     ...enquiry,
+        //     start_time: formatDateForForm(enquiry.start_time)
+        // }))
     }, [id])
 
     // so the date is output in an easy to read way
@@ -44,20 +51,25 @@ const Enquiry = () => {
 
     return (
         <Form> {/*Card*/}
-            <h3>Booking request #{enquiry.id}</h3>
-            <p>Name: {customer.name}</p>
-            <p>Castle: {castle.name}</p>
-            <p>Booking start: {formatDateForUser(enquiry.start_time)}</p>
-            <p>Duration: {enquiry.duration} hours</p>
-            <p>{enquiry.terms_agreement ? "✅ Agreed" : "⛔️ Has not yet agreed" } to terms.</p>
-            <p>{enquiry.paid ? "✅ Paid" : "⛔️ Not yet paid" }.</p>
-            {/* <Link to={`/enquiries/${enquiry.id}/manage`}>Manage enquiry</Link> */}
-            <StyledLink
-                to={`/enquiries/${enquiry.id}/manage`}
-                state={{ enquiry }}
-                >
-                Create booking
-            </StyledLink>
+        { loading ?
+        <Loading /> :
+            <>
+                <h3>Booking request #{enquiry.id}</h3>
+                <p>Name: {customer.name}</p>
+                <p>Castle: {castle.name}</p>
+                <p>Booking start: {formatDateForUser(enquiry.start_time)}</p>
+                <p>Duration: {enquiry.duration} hours</p>
+                <p>{enquiry.terms_agreement ? "✅ Agreed" : "⛔️ Has not yet agreed" } to terms.</p>
+                <p>{enquiry.paid ? "✅ Paid" : "⛔️ Not yet paid" }.</p>
+                {/* <Link to={`/enquiries/${enquiry.id}/manage`}>Manage enquiry</Link> */}
+                <StyledLink
+                    to={`/enquiries/${enquiry.id}/manage`}
+                    state={{ enquiry }}
+                    >
+                    Create booking
+                </StyledLink>
+            </>
+        }
         </Form>
     )
 }
