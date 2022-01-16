@@ -12,13 +12,13 @@ const BookingRequest = () => {
     const {id} = useParams()
 
     return (
-        <Div>
+        <div>
         {/* customer id is only true once the customer form has been successfully posted, so once it is not null, the enquiry form will render */}
             {customerId ? 
                 <EnquiryForm customerId={customerId} castleId={id} /> : 
                 <CustomerForm setCustomerId={setCustomerId} /> 
             }
-        </Div>
+        </div>
     )
 }
 

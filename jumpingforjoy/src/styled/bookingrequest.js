@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Div = styled.div`
+export const EnquiryForm = styled.form`
 
     //mobile devices
 
