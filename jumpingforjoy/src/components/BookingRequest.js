@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import EnquiryForm from './EnquiryForm'
 import CustomerForm from './CustomerForm'
 import {useParams} from 'react-router-dom'
-import { Div } from '../styled/bookingrequest'
+import { StyledForm } from '../styled/shared/forms'
 
 // Directed to here when a customer selects 'make an enquiry' from castle listing 
 const BookingRequest = () => {
@@ -12,13 +12,13 @@ const BookingRequest = () => {
     const {id} = useParams()
 
     return (
-        <div>
+        <StyledForm>
         {/* customer id is only true once the customer form has been successfully posted, so once it is not null, the enquiry form will render */}
             {customerId ? 
                 <EnquiryForm customerId={customerId} castleId={id} /> : 
                 <CustomerForm setCustomerId={setCustomerId} /> 
             }
-        </div>
+        </StyledForm>
     )
 }
 
