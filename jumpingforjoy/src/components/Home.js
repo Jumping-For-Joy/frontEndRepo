@@ -1,14 +1,16 @@
 import React from 'react';
-import JFJlogo from '../images/JFJLogo.jpg';
+import jumpingcastle1 from '../images/jumpingcastle1';
 import { Section } from '../styled/home'
 
 const Home =() => {
     return(
         <Section>
-            <div class="landing-image">
-                <img src={JFJlogo} alt="JFJlogo" width="500"/>
+            <div class="container">
+                <img src={jumpingcastle1} alt="Landing Image" width="500"/>
+                <button class="btn">Button</button>
             </div>
         </Section>
+
     )
 }
 
