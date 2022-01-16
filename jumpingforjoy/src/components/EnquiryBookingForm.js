@@ -47,7 +47,6 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
             ...formData,
             [event.target.name]: event.target.value
         })
-        console.log('datetime >', event.target.value)
     }
 
     // make sure terms are clicked on or 'read' before user can agree to them
