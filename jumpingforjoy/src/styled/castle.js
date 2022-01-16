@@ -13,7 +13,6 @@ export const Div = styled.div`
     margin-bottom: 80px;
     margin-top: 20px;
     font-family: 'Open Sans', sans-serif;
-    border: solid 1px red;
     color: #707070;
 
     h3 {

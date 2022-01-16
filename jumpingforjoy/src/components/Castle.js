@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { getCastle, deleteCastle } from '../services/castleServices'
 import { useGlobalState } from '../utils/stateContext'
 import { Div } from '../styled/castle'
 import Loading from './Loading'
 
-
 const Castle = () => {
-    // set local state to the right castle
     const [castle, setCastle] = useState('')
     const {id} = useParams()
-    // this is where we use global state to set logged in user
     const {store} = useGlobalState()
     const {loggedInUser} = store
     const [loading, setLoading] = useState(true)
+    const [confirmDelete, setConfirmDelete] = useState(false)
+    const navigate = useNavigate()
 
     useEffect(() => {
         getCastle(id)
@@ -25,14 +24,21 @@ const Castle = () => {
     }, [id])
 
     function handleDelete() {
-        const confirmDelete = window.confirm("Are you sure you want to delete this castle? This is a permanent change that cannot be undone.")
-        if (confirmDelete === true) {
-            deleteCastle(id)
-            .then(response => response.data)
-            .catch(error => console.log('delete castle error >', error))
-        }
-        console.log('confirm delete>', confirmDelete, 'castle >', castle)
+        console.log('castle id', castle.id)
+        deleteCastle(castle.id)
+        .then(navigate('/'))
+        .catch((error) => console.log('delete error', error.response.data))
     }
+
+    function checkDelete() {
+        setConfirmDelete(true)
+    }
+
+    function handleCancel() {
+        setConfirmDelete(false)
+    }
+
+
 
     return(
         <>
@@ -52,7 +58,13 @@ const Castle = () => {
                             <>
                                 {castle.available ? <p>Available now</p> : <p>Currently unavailable</p>}
                                 <Link to={`/castles/${castle.id}/update`}>Edit castle</Link>
-                                <button onClick={handleDelete}>Delete this castle</button>
+                                <button onClick={checkDelete}>Delete this castle</button>
+                                { confirmDelete && 
+                                <span>
+                                    <p>Are you sure? This is permanent and cannot be undone.</p>
+                                    <button onClick={handleDelete}>Confirm delete</button>
+                                    <button onClick={handleCancel}>Cancel delete</button>
+                                </span>}
                             </>
                         }
                     </section>

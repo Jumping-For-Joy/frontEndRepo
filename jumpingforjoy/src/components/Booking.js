@@ -31,7 +31,7 @@ const Booking = () => {
 
     // so the date is output in an easy to read way
     function formatDateForUser(date) {
-        let readableDate = new Date(date).toLocaleString('en-GB', {hour12: true})
+        let readableDate = new Date(date).toLocaleString()
         return readableDate
     }
     

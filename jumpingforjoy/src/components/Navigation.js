@@ -8,7 +8,7 @@ const Navigation =() => {
         <Nav>
             <UnorderedList>
                 <li><Link to="/" className="active">Home</Link></li>
-                <li><Link to="/castles" className="active">Jumping Castles</Link></li>
+                <li><Link to="/" className="active">Jumping Castles</Link></li>
                 <li><Link to="/about" className="active">About</Link></li>
             </UnorderedList>
             <img src={jfjcastle} alt="jfjcastle" />
