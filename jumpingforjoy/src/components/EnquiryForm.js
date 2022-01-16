@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import {createEnquiry} from '../services/enquiryServices';
 import EnquiryBookingForm from './EnquiryBookingForm';
+import { send } from 'emailjs-com'
 
 // To create a new enquiry after filling out the customer form
 const EnquiryForm = ({customerId, castleId}) => {
     // state to let user know form was successfully submitted
     const [submitted, setSubmitted] = useState(false)
+    const navigate = useNavigate()
 
 
     function getEndTime(startTime, duration) {
@@ -23,7 +26,8 @@ const EnquiryForm = ({customerId, castleId}) => {
             end_time: getEndTime(submittedData.start_time, submittedData.duration), 
             castle_id: castleId
         })
-        .then((response) => console.log(response))
+        .then()
+        .then(navigate(`/confirmation`))
         .catch((error) => console.log(error))
         setSubmitted(true)
     }

@@ -3,10 +3,10 @@ import {useGlobalState} from '../utils/stateContext'
 import {Link} from 'react-router-dom'
 import {StyledForm} from '../styled/shared/forms'
 
-// reusable form for creating and editing enquiries and bookings
+// form for creating and editing enquiries and bookings
 const EnquiryBookingForm = ({handleSubmit, existingData}) => {
 
-    // beause this form is rendered by both new enquiries and for existing enquiries being turned into bookings, we need to check if data is being passed to prefil or if it needs to be blank
+// beause this form is rendered by both new enquiries and for existing enquiries being turned into bookings, we need to check if data is being passed to prefil or if it needs to be blank
     function checkForExistingData(data) {
         if (data) {
             return ({
@@ -47,12 +47,15 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
             ...formData,
             [event.target.name]: event.target.value
         })
+        console.log('datetime >', event.target.value)
     }
 
     // make sure terms are clicked on or 'read' before user can agree to them
     function handleTerms() {
         setTermsRead(true)
     }
+
+    // date change handler to combine date and time
 
     return (
         <div>

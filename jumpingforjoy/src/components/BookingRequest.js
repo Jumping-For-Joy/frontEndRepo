@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import EnquiryForm from './EnquiryForm'
 import CustomerForm from './CustomerForm'
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Div } from '../styled/bookingrequest'
 
 // Directed to here when a customer selects 'make an enquiry' from castle listing 
