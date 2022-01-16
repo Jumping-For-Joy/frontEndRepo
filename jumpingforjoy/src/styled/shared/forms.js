@@ -67,20 +67,17 @@ export const Form = styled.div `
 
 // basic styling for the castle form
 export const StyledForm = styled.form`
-    width: 350px;
+    width: 300px;
     color: #707070;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
-    
     text-align: center;
 
     div {
         background: #F8FEFE;
         margin-top: 20px;
-        
-
     }
 
     button {
@@ -93,7 +90,6 @@ export const StyledForm = styled.form`
         align-self: center;
         margin-top: 10px;
         margin-bottom: 10px;
-
     }
 
     button:hover {
@@ -102,19 +98,20 @@ export const StyledForm = styled.form`
 
     input[type="datetime-local"] {
         font-family: 'Open Sans', sans-serif;
-        
     }
+
     input[type="checkbox"] {
         accent-color: #D9F7FD;
         color: #707070;
-        
     }
+
     textarea {
         height: 100px;
         font-family: 'Open Sans', sans-serif;
         line-height: 110%;
         padding: 5px;
     }
+    
     label {
         padding-top: 10px;
         padding-bottom: 10px;
