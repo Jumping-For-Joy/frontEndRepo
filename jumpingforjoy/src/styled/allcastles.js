@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
 
 // entire page container
 export const Container = styled.div`
@@ -7,6 +6,9 @@ export const Container = styled.div`
     min-height: 100vh;
     flex-direction: column;
     text-align: center;
+    a {
+        color: #707070;
+    }
     a:visited {
         color: #707070;
     }
