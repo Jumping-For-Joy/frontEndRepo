@@ -65,7 +65,7 @@ export const Div = styled.div`
 
     a:hover {
         text-decoration: none;
-        color: #8AD7DB;
+        color: #F8FEFE;
     }
 
     button:hover {

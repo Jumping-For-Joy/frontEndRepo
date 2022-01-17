@@ -11,22 +11,8 @@ export const Section = styled.section`
         justify-content: center;
         width: 100%;
     }
-    button {
-        position: absolute;
-        top: 70%;
-        right: 4%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: #8AD7DB;
-        color: #707070;
-        font-size: 16px;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
 
-    button:hover {
+    a:hover {
         color: #F8FEFE;
     }
 
@@ -101,7 +87,7 @@ export const StyledLink = styled(Link)`
         padding: 10px;
         border: none;
         cursor: pointer;
-        border-radius: 5px;
+        border-radius: 20px;
         width: 10%;
 
         a:hover {
