@@ -1,13 +1,13 @@
 import React from 'react';
-import jumpingcastle1 from '../images/jumpingcastle1';
+import JUMPING1 from '../images/JUMPING1.png';
 import { Section } from '../styled/home'
 
 const Home =() => {
     return(
         <Section>
             <div class="container">
-                <img src={jumpingcastle1} alt="Landing Image" width="500"/>
-                <button class="btn">Button</button>
+                <img src={JUMPING1} alt="Landing Image" width="600"/>
+                <button class="btn">Shop Castles</button>
             </div>
         </Section>
 

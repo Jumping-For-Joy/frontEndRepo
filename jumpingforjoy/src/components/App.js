@@ -18,6 +18,7 @@ import Booking from './Booking'
 import EditBooking from './EditBooking'
 import CustomerConfirmation from './CustomerConfirmation'
 import { StateContext } from '../utils/stateContext';
+import Home from './Home';
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
                 <Route path="/about" element={<About />}/>
 
                 {/* castle routes */}
-                <Route path="/" element={<AllCastles />}/>
+                <Route path="/" element={<Home />}/>
                 <Route path="castles/new" element={<AddCastle />}/>
                 <Route path="/castles/:id" element={<Castle />}/>
                 <Route path="/castles/:id/update" element={<EditCastle />}/>
