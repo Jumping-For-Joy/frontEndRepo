@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Div = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -49,23 +50,26 @@ export const Div = styled.div`
         justify-content: center;
 
     }
+    div {
+        a {
+            font-size: 15px;
+            color: #707070;
+            background: #8AD7DB;
+            border-radius: 20px;
+            text-decoration: none;
+            border: none;
+            padding: 10px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin: 10px
+        }
+    
+        a:hover {
+            text-decoration: none;
+            color: #F8FEFE;
+        }
 
-    a {
-        font-size: 15px;
-        color: #707070;
-        background: #8AD7DB;
-        border-radius: 20px;
-        text-decoration: none;
-        border: none;
-        padding: 10px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-    }
-
-    a:hover {
-        text-decoration: none;
-        color: #F8FEFE;
     }
 
     button:hover {
@@ -80,4 +84,12 @@ export const Div = styled.div`
     }
 
 `
+
+export const StyledLink = styled(Link)`
+    color: #707070;
+    a:active, a:visited {
+        color: #707070;
+    }
+`
+
 
