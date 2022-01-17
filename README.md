@@ -170,3 +170,70 @@ We'd really love it if we could just bring up a list of all the jumping castles 
 ![Entire trello board 4](docs/trello-screenshots/entire-board-4.png)
 ![Dataflow screenshot](docs/trello-screenshots/dataflow-screenshot.png)
 ![Wirefrimes screenshot](docs/trello-screenshots/wireframes-screenshot.png)
+![Postman CRUD Testing](docs/trello-screenshots/postman-crud-test.png)
+![REACT Planning](docs/trello-screenshots/plan-react.png)
+
+### Email Functionality
+![Received email](docs/email-functionality.png)
+
+### Testing Spreadsheet
+![Testing Spreadsheet](docs/testing.png)
+
+### Website Screenshots
+
+#### Home page
+![web home page](docs/web-screenshots/home-desk.png)
+![mobile home page](docs/web-screenshots/home-mob.png)
+
+#### About / Contact Page
+![web about/contact page](docs/web-screenshots/about-desk.png)
+![mobile abount/contact page](docs/web-screenshots/about-mob.png)
+
+#### For Hire
+![web For Hire page](docs/web-screenshots/for-hire-desk.png)
+![mobile For Hire page](docs/web-screenshots/for-hire-mob.png)
+
+#### Make a Booking Request
+![web & mobile home page](docs/web-screenshots/enquiry1-desk.png)
+![web & mobile home page](docs/web-screenshots/enquiry1-mob.png)
+
+#### Booking Request Details
+![web Booking Request page](docs/web-screenshots/enquiry2-desk.png)
+![mobile Booking Reqest page](docs/web-screenshots/enquiry2-mob.png)
+
+#### Booking Request Calendar
+![web Calendar page](docs/web-screenshots/enquiry3-desk.png)
+![mobile Calendar page](docs/web-screenshots/enquiry3-mob.png)
+
+#### Booking Success
+![web Booking Success page](docs/web-screenshots/enquiry4-desk.png)
+![mobile Booking Success page](docs/web-screenshots/enquiry4-mob.png)
+
+#### Create User
+![web Create User page](docs/web-screenshots/create-user-desk.png)
+![mobile Create User page](docs/web-screenshots/create-user-mob.png)
+
+#### Admin Login
+![web Admin Login page](docs/web-screenshots/admin-login-desk.png)
+![mobile Admin Login page](docs/web-screenshots/admin-login-mob.png)
+
+#### Admin Dashboard
+![web Admin Dashboard page](docs/web-screenshots/admin-dashboard-desk.png)
+![mobile Admin Dashboard page](docs/web-screenshots/admin-dashboard-mob.png)
+
+#### Enquiry Confirmed
+![web Enquiry Confirmed page](docs/web-screenshots/enquiry-desk.png)
+![mobile Enquiry Confirmed page](docs/web-screenshots/enquiry-mob.png)
+
+#### Booking Management
+![web Booking Management page](docs/web-screenshots/booking-management-desk.png)
+![mobile Booking Management page](docs/web-screenshots/booking-management-mob.png)
+
+#### Booking Confirmed
+![web Booking Confirmed page](docs/web-screenshots/booking-confirmed-desk.png)
+![mobile Booking Confirmed page](docs/web-screenshots/booking-confirmed-mob.png)
+
+#### Booking Dashboard Updated
+![web Booking Dashboard page](docs/web-screenshots/booking-dashboard-updated-desk.png)
+![mobile Booking Dashboard page](docs/web-screenshots/booking-dashboard-updated-mob.png)
+
