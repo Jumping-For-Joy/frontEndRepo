@@ -52,7 +52,7 @@ const AdminDashboard = () => {
                     <h3>Welcome admin</h3>
                     <DivOne>
                         <DivTwo>
-                            <h4>Booking Enquiries</h4>
+                            <h4>New Enquiries</h4>
                             <AllEnquiries enquiries={filteredEnquiries()} />
                         </DivTwo>
                         <DivTwo>

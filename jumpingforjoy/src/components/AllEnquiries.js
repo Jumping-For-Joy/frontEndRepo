@@ -1,47 +1,43 @@
-import React from 'react';
-import {Link} from 'react-router-dom'
-// import {getEnquiries} from '../services/enquiryServices'
-import {Card} from '../styled/admin'
-// import Loading from './Loading'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
+import { Card } from '../styled/admin'
+import { getCustomer } from '../services/customerServices'
+import Loading from './Loading'
 
 const AllEnquiries = ({enquiries}) => {
-    // const [enquiries, setEnquiries] = useState([])
-    // const [loading, setLoading] = useState(true)
-
-    // useEffect(() => {
-    //     getEnquiries()
-    //     .then((response) => {
-    //         setEnquiries(response)
-    //         setLoading(false)
-    //     })
-    //     .then(
-    //         filterEnquiries(confirmedEnquiries)
-    //     )
-    //     // .then((response) => console.log('enquiries response >', response, 'enquiries', enquiries))
-    //     .catch((error) => console.log(error))
-    // }, [])
-
-    // we only want to render enquiries that have not been turned into bookings
-
-    // function filterEnquiries(array) {
-    //     console.log('type', typeof array)
-    //     let newEnquiries = array.filter(id => id === enquiries.id)
-    //     console.log('new enq', newEnquiries)
-    //     return newEnquiries
-    // }
-
     return (
         <div>
-            {enquiries.map((enquiry, index) => {
+            {enquiries.map((enquiry) => {
                 return (
-                    <Card key={enquiry.id}>
-                        <Link key={enquiry.id} to={`/enquiries/${enquiry.id}`}>
-                            <h3>Enquiry #{enquiry.id}</h3>
-                        </Link>
-                    </Card>
+                    <EnquiryItem key={enquiry.id} enquiry={enquiry} />
                 )
             })}
         </div>
+    )
+}
+
+const EnquiryItem = ({enquiry}) => {
+    const [customer, setCustomer] = useState()
+
+    useEffect(() => {
+        getCustomer(enquiry.customer_id)
+        .then(response => setCustomer(response))
+        .catch(console.error)
+    }, [enquiry.customer_id])
+
+    return (
+        <Card>
+            {customer ?
+            <>
+                <Link to={`/enquiries/${enquiry.id}`}>
+                    <h3>Enquiry #{enquiry.id}</h3>
+                </Link>
+                <p>{customer.name}</p>
+            </>
+            : 
+            <Loading />
+            }
+        </Card>
     )
 }
 

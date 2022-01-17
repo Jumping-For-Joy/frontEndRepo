@@ -30,12 +30,6 @@ const Booking = () => {
         .catch((error) => console.log('booking retrieval error:', error))
     }, [id])
 
-    // so the date is output in an easy to read way
-    function formatDateForUser(date) {
-        let readableDate = new Date(date)
-        return readableDate
-    }
-    
     return (
         <Div>
             { loading ? 
