@@ -7,7 +7,7 @@ const Home =() => {
     return(
         <Section>
             <div class="container">
-                <img src={JUMPING1} alt="Landing Image" width="600"/>
+                <img src={JUMPING1} alt="LandingIMG" width="600"/>
                 <StyledLink to={"/castles"}>Shop Castles</StyledLink>
             </div>
         </Section>

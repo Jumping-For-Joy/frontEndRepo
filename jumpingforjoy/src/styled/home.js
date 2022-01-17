@@ -79,11 +79,13 @@ export const StyledLink = styled(Link)`
         cursor: pointer;
         border-radius: 5px;
         text-decoration: none;
+        
 
 
     a:hover {
         color: #F8FEFE;
     }
+
     // desktop
 
     @media(min-width: 1200px) {
@@ -100,6 +102,11 @@ export const StyledLink = styled(Link)`
         border: none;
         cursor: pointer;
         border-radius: 5px;
+        width: 10%;
+
+        a:hover {
+            color: #F8FEFE;
+        }
     }
 
 `
