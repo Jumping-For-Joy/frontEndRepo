@@ -69,21 +69,25 @@ export const DivOne = styled.div`
 
 // card for individual enquiry/bookings
 export const Card = styled.div`
-    width: 250px;
+    max-width: 100%;
+    width: 300px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #D9F7FD;
-    padding: 10px;
     img {
         width: 100%;
     }
+    h3 {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
     // tablet
     @media(min-width: 768px) {
-        margin: 10px;
+        max-width: 90%;
     }
     // desktop
     @media(min-width: 1200px) {

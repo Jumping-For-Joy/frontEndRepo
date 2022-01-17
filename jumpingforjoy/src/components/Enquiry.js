@@ -45,6 +45,9 @@ const Enquiry = () => {
         { loading ?
         <Loading /> :
             <>
+                <div>
+                    <Link to='/admin'>Back to dashboard</Link>
+                </div>
                 <h3>Enquiry #{enquiry.id}</h3>
                     <p>{customer.name}</p>
                     <p>{customer.street_number} {customer.street_name}

@@ -1,42 +1,43 @@
-import React, {useEffect, useState} from 'react'
-import {Link} from 'react-router-dom'
-import {getBookings} from '../services/bookingServices'
-import {Card} from '../styled/admin'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { getCustomer } from '../services/customerServices'
+import { Card } from '../styled/admin'
 import Loading from './Loading'
 
-const AllBookings = () => {
-    const [bookings, setBookings] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        getBookings()
-        .then((response) => {
-            setBookings([...bookings, ...response])
-            setLoading(false)
-        })
-        .then(() => console.log('bookings', bookings))
-        .catch((error) => console.log(error))
-    },[])
- 
+const AllBookings = ({bookings}) => {
     return (
         <div>
-            { loading ? 
-            <Loading /> :
-            <>
-                {bookings.map((booking, index) => {
-                    return (
-                        <Card key={booking.id}>
-                            <Link key={booking.id} to={`/bookings/${booking.id}`}>
-                                <h3>Booking #{booking.id}</h3>
-                            </Link>
-                        </Card>
-                    )
-                })}
-            </>
-            }
-
-
+            {bookings.map((booking) => {
+                return (
+                    <BookingItem key={booking.id} booking={booking} />
+                )
+            })}
         </div>
+    )
+}
+
+const BookingItem = ({booking}) => {
+    const [customer, setCustomer] = useState()
+
+    useEffect(() => {
+        getCustomer(booking.customer_id)
+        .then(response => setCustomer(response))
+        .catch(console.error)
+    }, [booking.customer_id])
+
+    return (
+        <Card>
+            {customer ? 
+            <>
+                <Link to={`/bookings/${booking.id}`}>
+                    <h3>Booking #{booking.id}</h3>
+                </Link>
+                <p>{customer.name}</p>
+            </>
+            :
+            <Loading />
+            }
+        </Card>
     )
 }
 

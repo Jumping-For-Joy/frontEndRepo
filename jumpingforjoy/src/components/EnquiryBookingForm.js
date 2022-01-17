@@ -11,11 +11,12 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
         if (data) {
             return ({
                 ...existingData,
-                start_time: new Date(existingData.start_time).toISOString().slice(0, -8)
+                start_time: new Date(existingData.start_time).toISOString().slice(0, -8),
+                paid: existingData.paid ?? false
             })
         }
         else {
-            return {}
+            return {paid: false}
         }
     }
 
@@ -109,10 +110,10 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                 <label htmlFor="notes">Notes (optional)</label>
                     <textarea
                         name="notes"
-                        value={formData.notes}
+                        value={formData.notes ?? ''}
                         onChange={changeHandler}
                         data-testid="notes"
-                    >{formData.notes}</textarea>
+                    ></textarea>
 
                 <p>You must read and agree to the Terms and Conditions before submitting an enquiry.</p>
                 <Link to="/Jumping-For-Joy-TCSI.pdf" target="blank" onClick={handleTerms}>Terms and Conditions</Link>
