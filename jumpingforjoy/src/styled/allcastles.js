@@ -110,7 +110,9 @@ export const Card = styled.div`
         margin-bottom: 10px;
     }
 `
-
+export const UnavailableCard = styled(Card)`
+    opacity: 0.6;
+`
 export const Header4 = styled.h4`
     font-size: 20px;
 `

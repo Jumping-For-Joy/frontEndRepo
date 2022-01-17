@@ -9,13 +9,12 @@ export const Container = styled.div`
     text-align: center;
     justify-content: center;
     align-items: center;
-    a {
-        color: #8AD7DB;
-    }
-    a:visited {
+    a, a:visited {
         color: #707070;
     }
-
+    a:hover {
+        color: #8AD7DB;
+    }
     width: 100%;
     margin-bottom: 80px;
     margin: 0;

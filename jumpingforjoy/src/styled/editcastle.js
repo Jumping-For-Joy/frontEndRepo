@@ -11,6 +11,9 @@ export const Container = styled.div`
     text-align: center;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    a, a:active, a:visited {
+        color: #707070;
+    }
 
     // larger screens
     @media(min-width: 768px) {

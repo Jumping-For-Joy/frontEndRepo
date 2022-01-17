@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
-import {signUp} from '../services/authServices';
-import {useGlobalState} from '../utils/stateContext'
+import React, { useState } from 'react';
+import { signUp } from '../services/authServices';
+import { useGlobalState } from '../utils/stateContext'
 import { Form } from '../styled/shared/forms'
+import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
     const initialState = {
@@ -14,6 +15,7 @@ const SignUp = () => {
     const [userDetails, setUserDetails] = useState(initialState)
     const {store, dispatch} = useGlobalState()
     const {loggedInUser} = store
+    const navigate = useNavigate()
 
     function formHandler(event) {
         setUserDetails({
@@ -30,6 +32,7 @@ const SignUp = () => {
             sessionStorage.setItem("user", email)
             dispatch({type: 'setLoggedInUser', data: email})
             dispatch({type: 'setToken', data: jwt})
+            navigate('/admin')
         })
         .catch(error => console.log(error))
         setUserDetails(initialState)
