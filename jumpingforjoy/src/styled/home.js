@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import {Link} from 'react-router-dom' 
 
 export const Section = styled.section`
     
@@ -30,6 +30,16 @@ export const Section = styled.section`
         color: #F8FEFE;
     }
 
+    @media(min-width: 768px) {
+        img {
+            height: 700px;
+        }
+
+        button {
+            top: 78%;
+        }
+    }
+
     // desktop
 
     @media(min-width: 1200px) {
@@ -46,24 +56,50 @@ export const Section = styled.section`
         margin: auto;
         display: block; 
         width: 200%; 
+        height: 800px;
     }
 
-    button {
+    
+
+    
+`
+
+export const StyledLink = styled(Link)`
+    
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 70%;
+        right: 4%;
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         background-color: #8AD7DB;
         color: #707070;
         font-size: 16px;
-        padding: 12px 24px;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+
+
+    a:hover {
+        color: #F8FEFE;
+    }
+    // desktop
+
+    @media(min-width: 1200px) {
+        
+        position: absolute;
+        top: 78%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #8AD7DB;
+        color: #707070;
+        font-size: 16px;
+        padding: 10px;
         border: none;
         cursor: pointer;
         border-radius: 5px;
     }
 
-    button:hover {
-        color: #F8FEFE;
-    }
 `

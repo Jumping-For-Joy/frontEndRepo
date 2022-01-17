@@ -50,6 +50,7 @@ function App() {
 
                 {/* castle routes */}
                 <Route path="/" element={<Home />}/>
+                <Route path="/castles" element={<AllCastles />}/>
                 <Route path="castles/new" element={<AddCastle />}/>
                 <Route path="/castles/:id" element={<Castle />}/>
                 <Route path="/castles/:id/update" element={<EditCastle />}/>
