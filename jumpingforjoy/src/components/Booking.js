@@ -42,6 +42,9 @@ const Booking = () => {
                 <Loading /> :
                 <div>
                     <Card>
+                        <div>
+                            <Link to='/admin'>Back to dashboard</Link>
+                        </div>
                     <h3>Confirmed Booking #{booking.id}</h3>
                         <p>{customer.name}</p>
                         <p>{customer.street_number} {customer.street_name}
