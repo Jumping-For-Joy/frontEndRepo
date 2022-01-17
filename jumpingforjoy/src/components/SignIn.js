@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { signIn } from '../services/authServices';
 import { useGlobalState } from '../utils/stateContext'
 import { StyledForm } from '../styled/shared/forms'
@@ -70,6 +70,7 @@ const SignIn = () => {
                         </button>
                     </section>
                 </form>
+                <Link to='/signup'>Create new admin account</Link>
             </div>
         </StyledForm>
     )

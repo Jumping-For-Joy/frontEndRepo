@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {useNavigate, useParams} from 'react-router-dom'
-import {getCastle, updateCastle} from '../services/castleServices'
-import {useGlobalState} from '../utils/stateContext'
+import { useNavigate, useParams, Link } from 'react-router-dom'
+import { getCastle, updateCastle } from '../services/castleServices'
+import { useGlobalState } from '../utils/stateContext'
 import CastleForm from './CastleForm'
-import { StyledForm } from '../styled/shared/forms'
+import { Container } from '../styled/editcastle'
 
 const EditCastle = () => {
     const [formData, setFormData] = useState({})
@@ -27,14 +27,15 @@ const EditCastle = () => {
     }
 
     return(
-        <StyledForm>
+        <Container>
             {/* not rendering the form until we have the data */}            
             {loggedInUser && formData.id &&  
                 <div>
+                    <Link to={`/castles/${id}`}>Cancel edit</Link>
                     <h3>Edit Castle</h3>
                     <CastleForm formSubmit={formSubmit} castle={formData} />
                 </div>}
-        </StyledForm>
+        </Container>
     )
 }
 
