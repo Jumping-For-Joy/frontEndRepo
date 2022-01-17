@@ -234,6 +234,6 @@ We'd really love it if we could just bring up a list of all the jumping castles 
 ![mobile Booking Confirmed page](docs/web-screenshots/booking-confirmed-mob.png)
 
 #### Booking Dashboard Updated
-![web Booking Dashboard page](docs/web-screenshots/booking-dashboard-updated-desk.png)
-![mobile Booking Dashboard page](docs/web-screenshots/booking-dashboard-updated-mob.png)
+![web Booking Dashboard page](docs/web-screenshots/booking-dashboard-updated-main-desk.png)
+![mobile Booking Dashboard page](docs/web-screenshots/booking-dashboard-updated-main-mob.png)
 
