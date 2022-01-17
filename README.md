@@ -16,8 +16,8 @@ The Jumping for Joy web application is designed to offer the business owner an e
 #### Functionality/Features
 The key features of this application will be:
 1. User authentication - to enhance site security.
-2. Account roles - provide full CRUD authority to an administrator to manage jumping castle listings and booking information. At this point in the business model, there isn't really need for a customer account. However, there could potentially be in the future  if the client wanted an online checkout feature, for example. Since user authentication is a feature that is being built regardless, it would be wise to include roles at the same time so the application is adapatable and scalable. 
-3. List castles for hire - in the style of a traditional e-commerce store, each jumping castle will have its own page with all the relevant details for the customer to browse. Instead of a 'shop now' button, there will be a 'request to book' button, where the customer will then fill out a form to make a booking request.
+2. Full authority to an administrator to manage jumping castle listings and booking information. At this point in the business model, there isn't really need for a customer account. However, there could potentially be in the future  if the client wanted an online checkout feature, for example. Since user authentication is a feature that is being built regardless, we have included a boolean value for admin in the database that enables scalability in the future. 
+3. List jumping castles for hire - in the style of e-commerce store, each jumping castle will have its own page with all the relevant details for the customer to browse. Instead of a 'shop now' button, there will be a 'request to book' button, where the customer will then fill out a form to make a booking request.
 4. Submit a booking request - customers are able to send through a booking request for their jumping castle of choice. This will be executed by submitting a form with the required details (customer name, customer email, date of booking, booking duration, booking address, notes, chosen jumping castle). It was determined in discussion with the client that it would be better to make booking requests as opposed to a calendar/event like system, so the client could approve bookings on a case by case basis. As our client attends the hire site and sets the castles up herself, automating a schedule is not practical because each setup and travel time could be different which would require manual blocking/unblocking of availabilities on the customer-visible calendar. The pros and cons of using a form/request system were discussed with the client.
 
     **Pros:**
@@ -30,8 +30,8 @@ The key features of this application will be:
     - this model would not scale easily should the business grow to a point where there are multiple bookings per day
 The client preferred a booking request in this instance, hence we will create this function. 
 
-5. Administrative dashboard - this will be where the application administrator or client in this instance, can see all booking requests, manage and respond to these requests, as well as see who has or hasn't paid a deposit or any other relevant details. There will also be an option to see upcoming bookings.
-6. Add bookings to Google Calendar - utilising the Google Calendar API, the business owner will be able to add bookings to her google calendar.
+5. Administrative dashboard - this will be where the application administrator or client in this instance, can see all booking requests, and manage these requests, as well as see who has or hasn't paid a deposit or any other relevant details. There will also be an option to see upcoming bookings.
+6. Email notification when a new enquiry is submitted, with the ability to reply in the users email service directly to the customer should any details need to be changed.
 
 #### Target Audience
 This application has three main target audiences:
@@ -47,20 +47,15 @@ This application has three main target audiences:
 - Netlify (deploy)
 - Styled Components - styling for the application
 
-Moment.js was added in to ensure dates and times were rendered correctly.
-
 **Back-end:**
 - Ruby
 - Ruby on Rails (API)
 - Heroku (deploy)
 
 **Gems/packages:**
-- CanCan - allows users to be assigned special permissions so only admin users can make changes to listings and view certain pages
+- Moment - ensure dates and times were rendered correctly.
 - JWSToken - authenticates users
 - Knock - authenticate users
-
-**Third-party APIs:**
-- Google Calendar API - so bookings can create Google calendar events for the Admin user
 - EmailJS - to send email notifications to admin email for booking requests
 
 **Planning and design:**
@@ -70,6 +65,8 @@ Moment.js was added in to ensure dates and times were rendered correctly.
 
 ### Dataflow Diagram
 ![Dataflow diagram for Jumping for Joy web application](docs/jfj-dataflow-diagram.png)
+
+In the end, a table for customers was added. Each instance of customer is created as a part of a new enquiry, before the enquiry details are submitted. It stores the event delivery details and customer information to keep the data normalised. `customer_id` is referenced by both the enquiry and bookings table. 
 
 ### Application Architecture Diagram
 ![Application diagram for Jumping for Joy](docs/jfj-application-architecture-diagram.png)
