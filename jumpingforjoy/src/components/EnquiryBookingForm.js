@@ -114,6 +114,7 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                         data-testid="notes"
                     >{formData.notes}</textarea>
 
+                <p>You must read and agree to the Terms and Conditions before submitting an enquiry.</p>
                 <Link to="/Jumping-For-Joy-TCSI.pdf" target="blank" onClick={handleTerms}>Terms and Conditions</Link>
                 <span>
                         <input
@@ -122,7 +123,6 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                             name="terms_agreement"
                             checked={formData.terms_agreement} 
                             onChange={checkboxHandler}
-                            disabled={!termsRead}
                             required={true}
                             data-testid="terms"
                         />
@@ -142,8 +142,10 @@ const EnquiryBookingForm = ({handleSubmit, existingData}) => {
                         <label>Mark as paid</label>
                     </span>
                 }
-
-                <button type="submit" data-testid="submitButton">Submit</button>
+                { termsRead ? 
+                    <button type="submit" data-testid="submitButton">Submit</button> :
+                    <p>You need to read the Terms and Conditions before submitting</p>
+                }
             </StyledForm>
         </div>
     )
